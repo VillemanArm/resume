@@ -6,27 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Веб студия Insight</title>
 </head>
 
 <body>
+    <header class="header container">
+        <a href="#" class="header__link">About</a>
+        <a href="#" class="header__link">Skills</a>
+        <a href="#" class="header__link">Contacts</a>
+    </header>
     <main>
-        <h2>My frontend works</h1>
-            <ul>
-                <li><a href="works/video_app_bootstrap_adaptive/video_app_bootstrap.html" target="_blank">Video app
-                        botstrap
-                        adaptive</a></li>
-                <li><a href="works/video_app_flexbox_adaptive/video_app_flex.html" target="_blank">Video app flexbox
-                        adaptive</a></li>
-                <li><a href="works/office_direct/office_direct.html" target="_blank">OfficeDirect</a></li>
-            </ul>
+        <div class="hero container">
+            <div class="hero__text">
+                <h1 class="hero__header">Maxim Mishchenko</h1>
+                <p class="hero__description">Web developer</p>
+                <a href="#" class="hero__contact">Contact Me</a>
+            </div>
+            <div class="hero__face">
+                <img src="img/hero/face.png" alt="face">
+            </div>
+        </div>
+        <div class="about container">
+            <h2 class="about__header">About</h2>
+            <p class="about__content">I'm beginner web developer seeking a challenging position in a dynamic company
+                where I can apply my technical skills and grow as a professional.</p>
+            <p class="about__content">I'm trained as a mechanical engineer and now I'm studying web development.
+                I have learned programming basics by python language. And now I'm learning frontend development by
+                Javascript because this way I can start doing real projects faster. But I'm also willing to practice
+                with python backend development, because I like Python for its brevity and harmony.</p>
+            <p class="about__content">At my previous job i got experience with buisnes processes building,
+                automatization of standard tasks,
+                working with command in CRM.</p>
+        </div>
+        <div class="skills container">
+            <h2 class="skills__header">My skills</h2>
+            <div class="skills__blocks">
+                <div class="skills__block">
+                    <div class="skills__block-img skills__block-2-img">
+                        <img src="img/skills/html.svg" alt="html">
+                        <img src="img/skills/css.svg" alt="css">
+                    </div>
+                    <p class="skills_block-title">HTML & CSS</p>
+                </div>
+                <div class="skills__block">
+                    <div class="skills__block-img">
+                        <img src="img/skills/js.svg" alt="js">
+                    </div>
+                    <p class="skills_block-title">Javascript</p>
+                </div>
+                <div class="skills__block">
+                    <div class="skills__block-img">
+                        <img src="img/skills/python.svg" alt="python">
+                    </div>
+                    <p class="skills_block-title">Python</p>
+                </div>
+                <div class="skills__block">
+                    <div class="skills__block-img">
+                        <img src="img/skills/tools.svg" alt="">
+                    </div>
+                    <p class="skills_block-title">Tools</p>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio container">
+            <a href="" class="portfolio__github">My GitHub</a>
+            <div class="portfolio__webpages">
+                <button class="portfolio__webpages">My frontend works</button>
+                <ul>
+                    <li><a href="works/video_app_bootstrap_adaptive/video_app_bootstrap.html" target="_blank">Video app
+                            botstrap
+                            adaptive</a></li>
+                    <li><a href="works/video_app_flexbox_adaptive/video_app_flex.html" target="_blank">Video app flexbox
+                            adaptive</a></li>
+                    <li><a href="works/office_direct/office_direct.html" target="_blank">OfficeDirect</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
     </main>
 </body>
 

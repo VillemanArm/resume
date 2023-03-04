@@ -1,7 +1,151 @@
-body {
-    font-family: "Roboto", sans-serif;
-    background-image: url("../img/Screenshot_30.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+
+@font-face {
+  font-family: "Microsoft YaHei UI";
+  src: url("../fonts/Microsoft YaHei Bold.ttf");
+  font-style: normal;
+  font-weight: 700;
 }
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 0.520835vw;
+}
+
+body {
+  background-color: #343A3A;
+  font-family: "Inter";
+  color: #FFFBF5;
+}
+
+a {
+  color: #FFFBF5;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Microsoft YaHei UI;
+  font-size: 6.4rem;
+  margin: 0;
+}
+
+h2 {
+  font-family: Microsoft YaHei UI;
+  font-size: 5.4rem;
+  margin-bottom: 3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.container {
+  max-width: 140rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 6rem;
+  justify-content: center;
+}
+
+.header__link {
+  margin-top: 6rem;
+  font-size: 2.4rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.hero__text {
+  display: grid;
+  align-content: start;
+  justify-items: start;
+  padding-top: 19.6rem;
+}
+
+.hero__header {
+  margin-bottom: 0.6rem;
+}
+
+.hero__description {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero__contact {
+  display: block;
+  border: 0.3rem solid #F0B94D;
+  border-radius: 1.1rem;
+  padding: 1.7rem 3.4rem;
+  font-size: 2.7rem;
+  color: #F0B94D;
+}
+.hero__contact:hover {
+  background-color: #F0B94D;
+  color: #343A3A;
+}
+
+.about__content {
+  font-size: 2.4rem;
+  text-indent: 4rem;
+  margin-bottom: 1.5rem;
+}
+.about__content:last-child {
+  margin-bottom: 10rem;
+}
+
+.skills__blocks {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  column-gap: 6rem;
+}
+
+.skills__block {
+  position: relative;
+  width: 27rem;
+  height: 27rem;
+  display: grid;
+  align-content: center;
+  background-color: #636362;
+  border-radius: 1.1rem;
+}
+
+.skills__block-img {
+  height: 10rem;
+  margin-bottom: 2rem;
+}
+
+.skills__block-2-img {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 10rem;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.skills_block-title {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+/*# sourceMappingURL=style.css.map */
