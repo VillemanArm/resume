@@ -13,7 +13,8 @@
 <body>
     <header class="header container">
         <a href="#" class="header__link">About</a>
-        <a href="#" class="header__link">Skills</a>
+        <a href="#" class="header__link">My skills</a>
+        <a href="#" class="header__link">My works</a>
         <a href="#" class="header__link">Contacts</a>
     </header>
     <main>
@@ -23,8 +24,10 @@
                 <p class="hero__description">Web developer</p>
                 <a href="#" class="hero__contact">Contact Me</a>
             </div>
-            <div class="hero__face">
-                <img src="img/hero/face.png" alt="face">
+            <div class="hero__face-wrap">
+                <div class="hero__face ">
+                    <img src="img/hero/face.png" alt="face">
+                </div>
             </div>
         </div>
         <div class="about container">
@@ -70,17 +73,24 @@
             </div>
         </div>
         <div class="portfolio container">
-            <a href="" class="portfolio__github">My GitHub</a>
-            <div class="portfolio__webpages">
-                <button class="portfolio__webpages">My frontend works</button>
-                <ul>
-                    <li><a href="works/video_app_bootstrap_adaptive/video_app_bootstrap.html" target="_blank">Video app
-                            botstrap
-                            adaptive</a></li>
-                    <li><a href="works/video_app_flexbox_adaptive/video_app_flex.html" target="_blank">Video app flexbox
-                            adaptive</a></li>
-                    <li><a href="works/office_direct/office_direct.html" target="_blank">OfficeDirect</a></li>
-                </ul>
+            <h2 class="portfolio__header">My works</h2>
+            <div class="portfolio__blocks">
+                <div class="portfolio__webpages portfolio__block">
+                    <div class="portfolio__webpages-title">My frontend works</div>
+                    <ul>
+                        <li><a href="works/video_app_bootstrap_adaptive/video_app_bootstrap.html" target="_blank">Video
+                                app
+                                botstrap
+                                adaptive</a></li>
+                        <li><a href="works/video_app_flexbox_adaptive/video_app_flex.html" target="_blank">Video app
+                                flexbox
+                                adaptive</a></li>
+                        <li><a href="works/office_direct/office_direct.html" target="_blank">OfficeDirect</a></li>
+                    </ul>
+                </div>
+                <a href="https://github.com/Belaz4x4?tab=repositories" class="portfolio__github portfolio__block"
+                    target="_blank">My GitHub</a>
+
             </div>
 
         </div>
