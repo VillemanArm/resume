@@ -69,6 +69,7 @@ img
 
 .header__link
     margin-top: 3.2rem
+    z-index: 2
 
     font-size: 1.8rem
 
@@ -139,20 +140,27 @@ img
     justify-content: center
     column-gap: 2rem
 
-.skills__block
-    position: relative
+.skills__block-wrap
     width: 28.3rem
     height: 28.3rem
+    position: relative
+    margin-bottom: 16.2rem
+
+.skills__block
+    position: absolute
+    width: 100%
+    height: 100%
     display: grid
     align-content: center
-    margin-bottom: 16.2rem
+    z-index: 5
     
     background-color: $block-color
     border-radius: 1.1rem
+    cursor: pointer
 
     &:hover
         background-color: $second-color
-        box-shadow: 0px 20px 52px -8px rgba(0, 0, 0, 0.7)
+        box-shadow: 0 2rem 4rem -0.8rem rgba(0, 0, 0, 0.7)
 
 
 .skills__block-img
@@ -170,12 +178,33 @@ img
     text-align: center 
     font-size: 2.4rem 
 
+.skills__list
+    width: 100%
+    display: none
+    position: absolute
+    padding-top: 6.2rem
+    top: 25rem
+    z-index: 4
+
+    background-color: $block-color
+    border-radius: 1.1rem
+    
+
+.skills__list-item
+    list-style-type: none
+    font-size: 2.2rem
+    margin-bottom: 2rem 
+    margin-left: 3rem
+
 .works__blocks
     display: grid
     grid-template-columns: repeat(2, 58.6rem)
     justify-content: center
     column-gap: 2rem
     margin-bottom: 16.2rem
+
+.works__block-wrap
+    position: relative
 
 .works__block
     display: block
@@ -185,14 +214,34 @@ img
 
     background-color: $block-color
     border-radius: 1.1rem
+    cursor: pointer
 
     &:hover
         background-color: $second-color
-        box-shadow: 0px 20px 52px -8px rgba(0, 0, 0, 0.7)
+        box-shadow: 0 2rem 3.5rem -0.8rem rgba(0, 0, 0, 0.7)
 
 .works__webpages
-    ul
-        display: none
+    width: 100%
+    position: absolute
+    z-index: 3    
+
+.works__list
+    width: 100%
+    display: none
+    position: absolute
+    padding-top: 6.2rem
+    top: 9rem
+    z-index: 1
+
+    background-color: $block-color
+    border-radius: 1.1rem
+    
+
+.works__list-item
+    list-style-type: none
+    font-size: 2.2rem
+    margin-bottom: 2rem 
+    margin-left: 3rem
 
 .works__webpages-title
     display: grid
