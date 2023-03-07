@@ -19,7 +19,7 @@
 $header-font: Microsoft YaHei UI
 $primary-color: #FFFBF5
 $second-color: #F0B94D
-$background-color: #343A3A
+$background-color: #37343A
 $block-color: #636362
 
 * 
@@ -94,17 +94,18 @@ img
 
 .hero__contact
     display: block
-    padding: 1.7rem 3.4rem
+    padding: 1.4rem 3.1rem
+    box-sizing: border-box
 
     font-size: 2.7rem
 
     background-color: $second-color
+    border: 0.3rem solid $second-color
     border-radius: 1.1rem
     color: $primary-color
 
     &:hover
-        border: 0.3rem solid $second-color
-        background-color: none
+        background-color: transparent
         color: $second-color
         
 .hero__face-wrap
@@ -169,16 +170,16 @@ img
     text-align: center 
     font-size: 2.4rem 
 
-.portfolio__blocks
+.works__blocks
     display: grid
     grid-template-columns: repeat(2, 58.6rem)
     justify-content: center
     column-gap: 2rem
     margin-bottom: 16.2rem
 
-.portfolio__block
+.works__block
     display: block
-    padding: 4.3rem 3.4rem
+    padding: 2.3rem 0.1rem
 
     font-size: 2.4rem
 
@@ -189,12 +190,68 @@ img
         background-color: $second-color
         box-shadow: 0px 20px 52px -8px rgba(0, 0, 0, 0.7)
 
-.portfolio__webpages
+.works__webpages
     ul
         display: none
 
-.portfolio__webpages-title
-    text-align: center
+.works__webpages-title
+    display: grid
+    align-items: center
+    grid-template-columns: repeat(2, auto)
+    justify-content: center
+    column-gap: 2rem
 
-.portfolio__github
-    text-align: center
+
+.works__github
+    display: grid
+    align-items: center
+    grid-template-columns: repeat(2, auto)
+    justify-content: center
+    column-gap: 2rem
+
+.works__img
+    height: 7rem
+    display: inline-block
+
+.contacts
+    padding-top: 8.1rem
+
+    &_color
+        background-color: #333036
+
+.contacts__header
+    margin-bottom: 4.9rem
+
+.contacts__content-wrap
+    display: grid
+    grid-template-columns: auto 50rem auto 50rem
+    row-gap: 4.5rem
+    column-gap: 4rem
+    justify-items: start
+    align-items: center
+    justify-content: start
+    padding-bottom: 10.6rem
+
+.contacts__information
+        font-size: 2.4rem
+
+#phone
+    width: 3.9rem
+    height: 6.1rem
+    justify-self: center
+
+
+#telegram
+    width: 5.6rem
+    height: 5.1rem
+    justify-self: center
+
+#mail
+    width: 4.8rem
+    height: 3.8rem
+    justify-self: center
+
+#whatsapp
+    width: 4.9rem
+    height: 4.9rem
+    justify-self: center
