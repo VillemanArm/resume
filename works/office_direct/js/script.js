@@ -189,3 +189,54 @@ modal.addEventListener("click", (e) => {
         }
     }
 });
+
+//slider
+
+const swiper = new Swiper(".slider", {
+    // Optional parameters
+    loop: true,
+
+    //   // If we need pagination
+    pagination: {
+        el: ".slider-pagination",
+        clickable: true,
+    },
+
+    //   // Navigation arrows
+    navigation: {
+        nextEl: ".slider__arrow-right",
+        prevEl: ".slider__arrow-left",
+    },
+});
+
+// send form
+
+const form = document.querySelector(".form__element");
+
+const sendForm = (data) => {
+    // отправка данных в файл php
+    return fetch("mail.php", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+        },
+    }).then((res) => res.json());
+};
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault(); // отмена стандартного поведения кнопки submit
+
+    const dataForm = new FormData(form); // сбор всех данных в input из формы
+    const user = {};
+
+    dataForm.forEach((value, key) => {
+        user[key] = value;
+    });
+
+    sendForm(user).then((data) => {
+        console.log("Письмо успешно отправлено.");
+    });
+
+    form.reset();
+});
