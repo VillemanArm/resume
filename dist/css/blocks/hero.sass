@@ -1,0 +1,47 @@
+.hero
+    display: grid
+    grid-template-columns: repeat(2, 50%)
+
+.hero__text
+    display: grid
+    align-content: start
+    justify-items: start
+    padding-top: 21.6rem
+
+.hero__header
+    z-index: 2
+    margin-bottom: 0.7rem
+
+    white-space: nowrap
+
+.hero__description
+    font-size: 2.4rem  
+    margin-bottom: 4.2rem
+
+.hero__contact
+    display: block
+    padding: 1.4rem 3.1rem
+    box-sizing: border-box
+
+    font-size: 2.7rem
+
+    background-color: $second-color
+    border: 0.3rem solid $second-color
+    border-radius: 1.1rem
+    color: $primary-color
+
+    &:hover
+        background-color: transparent
+        color: $second-color
+        
+.hero__face-wrap
+    position: relative
+    width: 70rem
+    height: 79.1rem
+
+.hero__face
+    width: 70rem
+    height: 79.1rem
+    position: absolute
+    left: -6.6rem
+    top: -2.1rem

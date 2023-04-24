@@ -1,0 +1,67 @@
+.skills__blocks
+    display: grid    
+    grid-template-columns: repeat(4, auto)
+    justify-content: center
+    column-gap: 2rem
+
+.skills__block-wrap
+    width: 28.3rem
+    height: 28.3rem
+    position: relative
+    margin-bottom: 16.2rem
+
+.skills__block
+    position: absolute
+    width: 100%
+    height: 100%
+    display: grid
+    align-content: center
+    z-index: 5
+    
+    background-color: $block-color
+    border-radius: 1.1rem
+    cursor: pointer
+
+    &:hover
+        background-color: $second-color
+        box-shadow: 0 2rem 4rem -0.8rem rgba(0, 0, 0, 0.7)
+
+.skills__block_clicked
+    background-color: $second-color
+    
+    &:hover
+        box-shadow: none
+
+.skills__block-img
+    height: 12.2rem
+    margin-bottom: 2rem
+
+.skills__block-2-img
+        display: grid
+        grid-template-columns: repeat(2, auto)
+        grid-template-rows: 9.5rem
+        justify-content: center
+        column-gap: 1.2rem
+
+.skills_block-title   
+    text-align: center 
+    font-size: 2.4rem 
+
+.skills__list
+    width: 100%
+    display: none
+    position: absolute
+    padding-top: 6.2rem
+    padding-bottom: 2.5rem
+    top: 25rem
+    z-index: 4
+
+    background-color: $block-color
+    border-radius: 1.1rem
+    box-shadow: 0 2rem 4rem -0.8rem rgba(0, 0, 0, 0.7)
+
+.skills__list-item
+    list-style-type: none
+    font-size: 2.2rem
+    margin-bottom: 1.5rem 
+    margin-left: 3rem
