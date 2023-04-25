@@ -1,3 +1,54 @@
 .form__wrapper
     position: absolute
-    top: 15rem
+    z-index:3
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100rem
+    padding: 5rem 7rem 5rem 7rem
+
+    background-color: $dark-background-color
+    border-radius: 1.1rem
+    box-shadow: 0 2rem 4rem -0.8rem rgba(0, 0, 0, 0.7)
+
+.form-header
+    text-align: left
+
+.form__elements-wrapper
+    display: grid 
+    grid-template-columns: 1fr 1fr
+    column-gap: 4rem
+    row-gap: 2rem
+    margin-bottom: 2rem
+    // justify-items: stratch
+
+.form__element
+    display: grid 
+    justify-items: stratch
+    
+    label
+        margin-bottom: 1rem
+        display: block
+        font-size: 2.2rem
+
+    
+    input
+        height: 4rem
+        display: block
+
+        font-size: 2rem
+        
+        border-radius: 0.8rem
+        outline: none
+
+    textarea
+        margin-bottom: 2rem
+        resize: none
+
+        font-size: 2rem
+
+        border-radius: 0.8rem
+        outline: none
+
+.form__submit
+    margin-left: auto
