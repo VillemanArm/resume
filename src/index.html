@@ -18,7 +18,7 @@
         <a href="#contacts" class="header__link">My contacts</a>
     </header>
     <main>
-        <div class="hero container">
+        <section class="hero container">
             <div class="hero__text">
                 <h1 class="hero__header">Maxim Mishchenko</h1>
                 <p class="hero__description">Web developer</p>
@@ -29,8 +29,8 @@
                     <img src="img/hero/face.png" alt="face">
                 </div>
             </div>
-        </div>
-        <div class="about container">
+        </section>
+        <section class="about container">
             <h2 id="about" class=" about__header">About</h2>
             <p class="about__content">I'm beginner web developer seeking a challenging position in a dynamic company
                 where I can apply my technical skills and grow as a professional.</p>
@@ -41,8 +41,8 @@
             <p class="about__content">At my previous job i got experience with buisnes processes building,
                 automatization of standard tasks,
                 working with command in CRM.</p>
-        </div>
-        <div class="skills container">
+        </section>
+        <section class="skills container">
             <h2 id="skills" class="skills__header">My skills</h2>
             <div class="skills__blocks">
                 <div class="skills__block-wrap">
@@ -102,8 +102,8 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="works container">
+        </section>
+        <section class="works container">
             <h2 id="works" class="works__header">My works</h2>
             <div class="works__blocks">
                 <div class="works__block-wrap">
@@ -136,9 +136,9 @@
                     <span>My GitHub</span>
                 </a>
             </div>
+        </section>
         </div>
-        </div>
-        <div class="contacts contacts_color">
+        <section class="contacts contacts_color">
             <div class="container">
                 <h2 id="contacts" class="contacts__header">My contacts</h2>
                 <div class="contacts__content-wrap">
@@ -161,9 +161,36 @@
                     <span class="contacts__information">+7 902 193 29 76</span>
                 </div>
             </div>
-        </div>
+        </section>
 
     </main>
 </body>
+
+<div class="form__wrapper">
+    <h2 class="form__header">Leave your contact information and I'll be sure to get back to you.</h2>
+    <form action="" class="form">
+        <div class="form__element">
+            <label for="name"><input type="text">Your name</input></label>
+            <input type="text" id="name" name="name"></input>
+        </div>
+        <div class="form__element">
+            <label for="company"><input type="text">Your company</input></label>
+            <input type="text" id="company" name="company"></input>
+        </div>
+        <div class="form__element">
+            <label for="phone"><input type="phone">Your phone number</input></label>
+            <input type="text" id="phone" name="phone"></input>
+        </div>
+        <div class="form__element">
+            <label for="e-mail"><input type="phone">Your e-mail</input></label>
+            <input type="text" id="e-mail" name="e-mail"></input>
+        </div>
+        <div class="form__element">
+            <label for="message"><input type="textarea"></input></label>
+            <input type="text" id="message" name="message"></input>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</div>
 
 </html>
