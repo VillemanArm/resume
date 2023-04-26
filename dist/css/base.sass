@@ -24,7 +24,7 @@ $second-color: #F0B94D
 $background-color: #37343A
 $block-color: #636362
 $dark-background-color: #333036
-
+$input-background: #63666e
 * 
     margin: 0
     padding: 0
@@ -81,7 +81,8 @@ button
     border-radius: 1.1rem
     color: $primary-color
 
-    &:hover
+@media (min-width: 48em)    
+    button:hover
         background-color: transparent
         color: $second-color
 
