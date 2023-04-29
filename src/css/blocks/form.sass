@@ -1,4 +1,4 @@
-.form__background
+.form__container
     width: 100%
     height: 100%
     position: fixed
@@ -68,6 +68,25 @@
     margin-bottom: 2rem
     resize: none
     padding: 0.5rem 1rem
+    
+    font-family: 'Inter', sans-serif
 
 .form__submit
     margin-left: auto
+
+.form__success-window
+    padding: 5rem 7rem
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    z-index: 28
+    position: fixed
+    display: none
+
+    &_style
+        background-color: $second-color
+        border-radius: 1.1rem
+        box-shadow: 0 2rem 4rem -0.8rem rgba(0, 0, 0, 0.7)
+
+    h3
+        margin: 0

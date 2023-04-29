@@ -166,12 +166,10 @@
     </main>
 </body>
 
-<div class="form form__background form__background_color">
+<div class="form__container form__container_color">
     <div class="form__window form__window_color">
         <h3 class="form__header">Leave your contact information<br>and I'll be sure to get back to you.</h3>
-        <form
-            action="https://script.google.com/macros/s/AKfycbxsGlJyOVPlrQKkc_oFT1j2UTf-pZh92sDFQLOrL2Jf752FElIj91w-O-mkA7vPWnWH/exec"
-            autocomplete="off" method="post">
+        <form class="form__data" autocomplete="off" method="post">
             <div class="form__elements-wrapper">
                 <div class="form__element">
                     <label for="name">Your name</label>
@@ -182,13 +180,13 @@
                     <input type="text" id="company" name="company" class="form__input form__input_color"></input>
                 </div>
                 <div class="form__element">
-                    <label for="phone-number">Your phone number</label>
-                    <input type="text" id="phone-number" name="phoneNumber"
+                    <label for="phoneNumber">Your phone number</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber"
                         class="form__input form__input_color"></input>
                 </div>
                 <div class="form__element">
                     <label for="e-mail">Your e-mail</label>
-                    <input type="email" id="e-mail" name="email" class="form__input form__input_color"></input>
+                    <input type="email" id="email" name="email" class="form__input form__input_color"></input>
                 </div>
             </div>
             <div class="form__element">
@@ -198,6 +196,9 @@
             </div>
             <button class="form__submit" type="submit">Send</button>
         </form>
+    </div>
+    <div class="form__success-window form__success-window_style">
+        <h3>Thank you for the application!</h3>
     </div>
 </div>
 

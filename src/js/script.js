@@ -29,20 +29,71 @@ skillsBlockWraps.forEach((wrap) => {
 
 // form
 
-const form = document.querySelector(".form"),
+const formContainer = document.querySelector(".form__container"),
+    formData = document.querySelector(".form__data"),
     contactButton = document.querySelector(".hero__contact"),
-    body = document.querySelector("body");
+    successWindow = document.querySelector(".form__success-window"),
+    body = document.querySelector("body"),
+    URL_APP = "https://script.google.com/macros/s/AKfycbxvgn5osvpAPiO0CoSrDvoc0wKONSNSHaSJu35l3UGcpJGFakP_nJxnuv0uSNFSKJRj/exec";
 
 contactButton.addEventListener("click", () => {
-    form.style.display = "block";
+    formContainer.style.display = "block";
     body.style.overflow = "hidden";
 });
 
-form.addEventListener("click", (e) => {
+formContainer.addEventListener("click", (e) => {
     const isForm = e.target.closest(".form__window");
 
     if (!isForm) {
-        form.style.display = "none";
+        formContainer.style.display = "none";
         body.style.overflow = "auto";
+        formData.reset();
     }
+});
+
+// навешиваем обработчик на отправку формы
+formData.addEventListener("submit", async (e) => {
+    // отменяем действие по умолчанию
+    e.preventDefault();
+
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const phoneNumber = document.querySelector("#phoneNumber");
+    const message = document.querySelector("#message");
+    const company = document.querySelector("#company");
+
+    // собираем данные из элементов формы
+    let details = {
+        name: name.value.trim(),
+        email: email.value.trim(),
+        phone: phoneNumber.value.trim(),
+        message: message.value.trim(),
+        company: company.value.trim(),
+    };
+
+     let formBody = [];
+        for (let property in details) {
+          // кодируем названия и значения параметров
+          let encodedKey = encodeURIComponent(property);
+          let encodedValue = encodeURIComponent(details[property]);
+          formBody.push(encodedKey + "=" + encodedValue);
+        }
+    // склеиваем параметры в одну строку, которую понимает Apps Script
+    formBody = formBody.join("&");
+
+    const response = await fetch(URL_APP, {
+        method: "POST",
+        headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+        mode: "no-cors",
+        body: formBody,
+      })
+
+    successWindow.style.display = "block";
+
+    setTimeout(function(){        
+        successWindow.style.display = "none";
+        formContainer.style.display = "none";
+    }, 3000);
+
+    formData.reset();
 });
