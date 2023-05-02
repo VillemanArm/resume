@@ -18,13 +18,14 @@
     font-named-instance: "Regular"
     src: url("../fonts/Inter-Regular.woff2") format("woff2")
 
-$header-font: Microsoft YaHei UI
+$header-font: Microsoft YaHei UI, sans-serif
 $primary-color: #FFFBF5
 $second-color: #F0B94D
 $background-color: #37343A
 $block-color: #636362
 $dark-background-color: #333036
 $input-background: #63666e
+
 * 
     margin: 0
     padding: 0
@@ -32,7 +33,7 @@ $input-background: #63666e
 
 
 html 
-    font-size: 0.520835vw
+    font-size: 10px
 
 
 body
@@ -65,9 +66,9 @@ img
     object-fit: contain
 
 .container
-    width: 120rem
-    margin-right: auto
+    width: 120em
     margin-left: auto
+    margin-right: auto
 
 button
     display: block
@@ -81,10 +82,43 @@ button
     border-radius: 1.1rem
     color: $primary-color
 
+@media (max-width: 82em)
+    html 
+        font-size: 0.7692307692307692vw
+
+    .container
+        width: 120rem
+
 @media (min-width: 48em)    
     button:hover
         background-color: transparent
         color: $second-color
+
+@media (max-width: 48em)
+    html 
+        font-size: 3.125vw
+
+    .container
+        width: 30rem
+
+    h1
+        font-size: 2.9rem
+
+    h2 
+        font-size: 1.8rem
+        margin-bottom: 4rem
+
+    h3 
+        font-size: 1.6rem
+        margin-bottom: 4rem
+
+    button
+        padding: 0.8rem 1.8rem
+
+        font-size: 1.8rem
+
+        border-radius: 0.8rem
+
 
 @import blocks/header
 @import blocks/hero

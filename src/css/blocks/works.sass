@@ -7,6 +7,7 @@
 
 .works__block-wrap
     position: relative
+    
 
 .works__block
     display: block
@@ -70,3 +71,50 @@
 .works__img
     height: 7rem
     display: inline-block
+
+@media (max-width: 48em)
+    .works__blocks
+        grid-template-columns: 100%
+        grid-template-rows: 1fr 1fr
+        column-gap: 0
+        row-gap: 1rem
+        margin-bottom: 6rem
+
+    .works__block
+        padding: 1.5rem 0.1rem
+
+        font-size: 2rem
+
+        border-radius: 0.8rem
+
+    .works__webpages
+        z-index: 2   
+
+    .works__list
+        padding-top: 3rem
+        padding-bottom: 0rem
+        top: 7.5rem
+        z-index: 1
+
+        background-color: $block-color
+        border-radius: 0.8rem
+
+    .works__list-item
+        list-style-type: none
+        font-size: 1.8rem
+        margin-bottom: 1.5rem 
+        margin-left: 2rem
+
+    .works__webpages-title
+        display: grid
+        align-items: center
+        grid-template-columns: repeat(2, auto)
+        justify-content: center
+        column-gap: 2rem
+
+
+    .works__github
+        z-index: 0
+
+    .works__img
+        height: 5.5rem
