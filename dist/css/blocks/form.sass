@@ -4,7 +4,7 @@
     position: fixed
     left: 0
     top: 0
-    z-index: 5
+    z-index: 8
     display: none
 
     &_color
@@ -14,11 +14,11 @@
 .form__window
     width: 100rem
     position: fixed
-    z-index:6
+    z-index:9
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-    padding: 5rem 7rem 5rem 7rem
+    padding: 5rem 7rem
     
 
     &_color
@@ -79,7 +79,7 @@
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-    z-index: 28
+    z-index: 10
     position: fixed
     display: none
 
@@ -90,3 +90,49 @@
 
     h3
         margin: 0
+
+@media (max-width: 48em)
+    .form__window
+        width: 29rem
+        padding: 2rem 1.5rem
+        
+        &_color
+            border-radius: 0.8rem
+
+    .form__elements-wrapper
+        grid-template-columns: 100%
+        column-gap: 0
+        row-gap: 1.5rem
+        margin-bottom: 1.5rem
+
+    .form__element
+        label
+            margin-bottom: 0.8rem
+            font-size: 1.4rem
+        
+    .form__input
+        height: 2.4rem
+        padding-left: 0.8rem
+        padding-right: 0.8rem
+
+        font-size: 1.4rem
+
+        &_color    
+            border-radius: 0.6rem
+
+    .form__textarea
+        height: 8.3em
+        margin-bottom: 1.5rem
+        padding: 0.5rem 0.8rem
+
+
+    .form__submit
+        margin-left: auto
+
+    .form__success-window
+        padding: 1.5rem 1.5rem
+        display: none
+
+        &_style
+            border-radius: 0.8rem
+

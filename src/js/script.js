@@ -95,5 +95,6 @@ formData.addEventListener("submit", async (e) => {
         formContainer.style.display = "none";
     }, 3000);
 
+    body.style.overflow = "auto";
     formData.reset();
 });
