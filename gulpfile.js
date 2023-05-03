@@ -54,31 +54,33 @@ const fontsTask = () => {
 }
 
 const transferingTask = () => { 
-    return src("./src/**/*.*")
+    return src("./src/works/**/*.*")
     .pipe(newer("./dist/"))
-    .pipe(dest("./dist/")) 
+    .pipe(dest("./dist/works/")) 
     .pipe(browserSync.stream()); 
 
 }
 
 const sassTask = () => { 
-return src("./src/css/*.{sass, scss}", {sourcemaps: isDev}) 
-    .pipe(plumber({ 
-        errorHandler: notify.onError(error => ({
-            title: 'SASS',
-            message: error.message
+    return src("./src/css/*.sass", {sourcemaps: isDev}) 
+        .pipe(plumber({ 
+            errorHandler: notify.onError(error => ({
+                title: 'SASS',
+                message: error.message
+            }))
         }))
-    }))
 
     .pipe(sass()) // преобразование sass в css
-    .pipe(concat("style.css"))
+    
     .pipe(webpCss())
     .pipe(autoprefixer())
     .pipe(shorthand()) // сокращение свойств, которые можно сократить
     .pipe(groupCssMediaQueries()) // сборка одинаковых медиа запросов в одно место
     .pipe(csso()) // минификация файла
+    .pipe(concat("style.css"))
     .pipe(dest("./dist/css/", {sourcemaps: isDev})) 
-    .pipe(browserSync.stream()); 
+    .pipe(browserSync.stream())
+
 
 }
 
@@ -92,6 +94,7 @@ const jsTask = () => {
         }))
         .pipe(babel()) // перевод на ES5 для старых браузеров
         .pipe(uglify()) // минификатор js
+        .pipe(concat("script.js"))
         .pipe(dest("./dist/js/", {sourcemaps: isDev})) 
         .pipe(browserSync.stream()); 
     }
