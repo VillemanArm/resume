@@ -71,8 +71,25 @@
     
     font-family: 'Inter', sans-serif
 
+.form__buttons-row
+    display: grid
+    justify-content: right
+
+    button
+        display: inline-block
+        
+
 .form__submit
-    margin-left: auto
+    margin-right: 2rem
+
+.form__close-style
+    background-color: none
+    color: $second-color
+
+@media (min-width: 48em)    
+    .form__close-style:hover
+        background-color: $second-color
+        color: $primary-color
 
 .form__success-window
     padding: 5rem 7rem
@@ -92,6 +109,10 @@
         margin: 0
 
 @media (max-width: 48em)
+    // .form__container
+    //     width: 92%
+    //     height: 100%
+
     .form__window
         width: 29rem
         padding: 2rem 1.5rem
@@ -125,9 +146,8 @@
         margin-bottom: 1.5rem
         padding: 0.5rem 0.8rem
 
-
     .form__submit
-        margin-left: auto
+        margin-right: 1rem
 
     .form__success-window
         padding: 1.5rem 1.5rem

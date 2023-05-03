@@ -33,6 +33,7 @@ const formContainer = document.querySelector(".form__container"),
     formData = document.querySelector(".form__data"),
     contactButton = document.querySelector(".hero__contact"),
     successWindow = document.querySelector(".form__success-window"),
+    closeButton = document.querySelector(".form__close"),
     body = document.querySelector("body"),
     URL_APP = "https://script.google.com/macros/s/AKfycbxvgn5osvpAPiO0CoSrDvoc0wKONSNSHaSJu35l3UGcpJGFakP_nJxnuv0uSNFSKJRj/exec";
 
@@ -95,6 +96,12 @@ formData.addEventListener("submit", async (e) => {
         formContainer.style.display = "none";
     }, 3000);
 
+    body.style.overflow = "auto";
+    formData.reset();
+});
+
+closeButton.addEventListener("click", () => {
+    formContainer.style.display = "none";
     body.style.overflow = "auto";
     formData.reset();
 });
