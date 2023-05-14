@@ -53,12 +53,19 @@ const fontsTask = () => {
 
 }
 
-const transferingTask = () => { 
+const worksTransferingTask = () => { 
     return src("./src/works/**/*.*")
     .pipe(newer("./dist/"))
     .pipe(dest("./dist/works/")) 
     .pipe(browserSync.stream()); 
 
+}
+
+const filesTransferingTask = () => { 
+    return src("./src/files/*.*")
+    .pipe(newer("./dist/"))
+    .pipe(dest("./dist/files")) 
+    .pipe(browserSync.stream()); 
 }
 
 const sassTask = () => { 
@@ -159,7 +166,8 @@ exports.sassTask = sassTask
 exports.jsTask = jsTask
 exports.imgTask = imgTask
 exports.fontsTask = fontsTask
-exports.transferingTask = transferingTask
+exports.worksTransferingTask = worksTransferingTask
+exports.filesTransferingTask = filesTransferingTask
 
 
 // флаг --production запускает режим финальной сборки проекта
@@ -170,6 +178,7 @@ exports.default = series(   // последовательный список з�
     jsTask, 
     imgTask,
     fontsTask,
-    transferingTask,
+    worksTransferingTask,
+    filesTransferingTask,
     parallel(watcher, server) // список задач, выполняемых параллельно
     )
