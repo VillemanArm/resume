@@ -75,26 +75,30 @@
 @media (max-width: 48em)
     .works__blocks
         grid-template-columns: 100%
-        grid-template-rows: 1fr 1fr
+        grid-template-rows: repeat(2, auto)
         column-gap: 0
         row-gap: 1rem
         margin-bottom: 6rem
 
     .works__block
-        padding: 1.5rem 0.1rem
+        height: 8.5rem
+        position: relative
+        z-index: 2   
 
         font-size: 2rem
 
         border-radius: 0.8rem
 
     .works__webpages
-        z-index: 2   
+        position: relative
+        z-index: 3   
 
     .works__list
+        position: relative
         padding-top: 3rem
-        padding-bottom: 0rem
-        top: 7.5rem
-        z-index: 1
+        padding-bottom: 0.5rem
+        top: -1rem
+        z-index: 2
 
         background-color: $block-color
         border-radius: 0.8rem
@@ -117,4 +121,4 @@
         z-index: 0
 
     .works__img
-        height: 5.5rem
+        height: 4.5rem
