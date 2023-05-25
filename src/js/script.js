@@ -1,31 +1,42 @@
-const worksWebpages = document.querySelector(".works__webpages");
-const worksList = document.querySelector(".works__list");
-const skillsBlockWraps = document.querySelectorAll(".skills__block-wrap");
+'use strict';
 
-// opening lists
-worksWebpages.addEventListener("click", () => {
-    if (worksWebpages.classList.contains("works__block_clicked")) {
-        worksList.style.display = "none";
-        worksWebpages.classList.remove("works__block_clicked");
-    } else {
-        worksList.style.display = "block";
-        worksWebpages.classList.add("works__block_clicked");
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+
+const worksWebpages = $(".works__webpages");
+const worksList = $(".works__list");
+const skillsBlockWraps = $$(".skills__block-wrap");
+const skillsBlocks = $(".skills__blocks");
+const worksBlockWrap = $('.works__block-wrap');
+
+//open blocks
+
+worksBlockWrap.addEventListener("click", () => {
+    worksBlockWrap.classList.toggle('block-clicked')
+    if (worksBlockWrap.classList.contains('block-clicked') && window.innerWidth > 768) 
+    {
+        $('.contacts').style.marginTop = "4rem";
+    } else
+    {
+        $('.contacts').style.marginTop = "16rem";
     }
 });
 
+
 skillsBlockWraps.forEach((wrap) => {
-    let skillsBlock = wrap.querySelector(".skills__block");
-    let skillsList = wrap.querySelector(".skills__list");
-    skillsBlock.addEventListener("click", () => {
-        if (skillsBlock.classList.contains("skills__block_clicked")) {
-            skillsList.style.display = "none";
-            skillsBlock.classList.remove("skills__block_clicked");
-        } else {
-            skillsList.style.display = "block";
-            skillsBlock.classList.add("skills__block_clicked");
-        }
-    });
+    wrap.querySelector('div').addEventListener("click", () => {
+            wrap.classList.toggle('block-clicked')
+            if (wrap.classList.contains('block-clicked') && window.innerWidth > 768) 
+            {
+                $('.works').style.marginTop = "4rem";
+            } else
+            {
+                $('.works').style.marginTop = "16rem";
+            }
+        });
 });
+
 
 // form
 
@@ -105,3 +116,12 @@ closeButton.addEventListener("click", () => {
     body.style.overflow = "auto";
     formData.reset();
 });
+
+// function checkInput(input, validCharacters) {
+//     input.addEventListener('input', () => {
+//         if(!validCharacters.test(input.value[input.value.length - 1])) input.value = input.value.slice(0, [input.value.length - 1]);
+//     });
+// }
+
+// let russianLetters = /^[\u0400-\u04FF\s.,!?;:()"'-]+$/;
+// let digits = /\d/;

@@ -1,17 +1,21 @@
+.works
+    margin-top: 16rem
+    
 .works__blocks
     display: grid
     grid-template-columns: repeat(2, 58.6rem)
     justify-content: center
     column-gap: 2rem
-    margin-bottom: 16.2rem
+    
 
 .works__block-wrap
     position: relative
     
 
 .works__block
-    display: block
-    padding: 2.3rem 0.1rem
+    display: grid
+    align-items: center
+    height: 11rem
 
     font-size: 2.4rem
 
@@ -31,16 +35,16 @@
 
 .works__webpages
     width: 100%
-    position: absolute
-    z-index: 3    
+    position: relative
+    z-index: 2    
 
 .works__list
     width: 100%
     display: none
-    position: absolute
+    position: relative
     padding-top: 6.2rem
     padding-bottom: 2.5rem
-    top: 9rem
+    top: -3rem
     z-index: 1
 
     background-color: $block-color
@@ -60,13 +64,16 @@
     justify-content: center
     column-gap: 2rem
 
-
 .works__github
     display: grid
     align-items: center
     grid-template-columns: repeat(2, auto)
     justify-content: center
     column-gap: 2rem
+
+@media (min-width: 48em)    
+    .works__github:hover
+        text-decoration: none
 
 .works__img
     height: 7rem
