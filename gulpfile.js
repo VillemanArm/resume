@@ -101,7 +101,6 @@ const jsTask = () => {
         }))
 
         .pipe(uglify()) // минификатор js
-
         .pipe(dest("./dist/js/", {sourcemaps: isDev})) 
         .pipe(browserSync.stream()); 
     }
