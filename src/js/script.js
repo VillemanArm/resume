@@ -40,11 +40,11 @@ skillsBlockWraps.forEach((wrap) => {
 
 // form
 
-const formContainer = document.querySelector(".form__container"),
-    formData = document.querySelector(".form__data"),
-    contactButton = document.querySelector(".hero__contact"),
-    successWindow = document.querySelector(".form__success-window"),
-    closeButton = document.querySelector(".form__close"),
+const formContainer = $(".form__container"),
+    formData = $(".form__data"),
+    contactButton = $(".hero__contact"),
+    successWindow = $(".form__success-window"),
+    closeButton = $(".form__close"),
     body = document.querySelector("body"),
     URL_APP = "https://script.google.com/macros/s/AKfycbxvgn5osvpAPiO0CoSrDvoc0wKONSNSHaSJu35l3UGcpJGFakP_nJxnuv0uSNFSKJRj/exec";
 
@@ -63,65 +63,142 @@ formContainer.addEventListener("click", (e) => {
     }
 });
 
-// навешиваем обработчик на отправку формы
-formData.addEventListener("submit", async (e) => {
-    // отменяем действие по умолчанию
-    e.preventDefault();
+// form validation
 
-    const name = document.querySelector("#name");
-    const email = document.querySelector("#email");
-    const phoneNumber = document.querySelector("#phoneNumber");
-    const message = document.querySelector("#message");
-    const company = document.querySelector("#company");
+const inputName = $("#name");
+const inputCompany = $("#company");
+const inputPhoneNumber = $("#phoneNumber");
+const inputEmail = $("#email");
+const inputMessage = $("#message");
+const nameRegExp = /^[a-zA-Z\s-]+$/;
+const textRegExp = /^[a-zA-Z0-9\s\.,!?';:()]+$/;
+const emailRegExp = /^[A-Za-z0-9_.@-]+$/;
+const digitsRegExp = /\d/;
 
-    // собираем данные из элементов формы
-    let details = {
-        name: name.value.trim(),
-        email: email.value.trim(),
-        phone: phoneNumber.value.trim(),
-        message: message.value.trim(),
-        company: company.value.trim(),
-    };
 
-     let formBody = [];
-        for (let property in details) {
-          // кодируем названия и значения параметров
-          let encodedKey = encodeURIComponent(property);
-          let encodedValue = encodeURIComponent(details[property]);
-          formBody.push(encodedKey + "=" + encodedValue);
-        }
-    // склеиваем параметры в одну строку, которую понимает Apps Script
-    formBody = formBody.join("&");
+function validateInput(input, regExp, plus = '') {
+    if(!regExp.test(input.value[input.value.length - 1])) 
+    {
+        input.value = input.value.slice(0, input.value.length - 1)
+    }
+    if (plus === '+' && !input.value.startsWith('+') && input.value !== '') 
+    {
+        input.value = '+' + input.value
+    }
+};
 
-    const response = await fetch(URL_APP, {
-        method: "POST",
-        headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
-        mode: "no-cors",
-        body: formBody,
-      })
-
-    successWindow.style.display = "block";
-
-    setTimeout(function(){        
-        successWindow.style.display = "none";
-        formContainer.style.display = "none";
-    }, 3000);
-
-    body.style.overflow = "auto";
-    formData.reset();
+inputName.addEventListener('input', () => {
+    validateInput(inputName, nameRegExp)
 });
+
+inputCompany.addEventListener('input', () => {
+    validateInput(inputCompany, textRegExp)
+});
+
+inputPhoneNumber.addEventListener('input', () => {
+        validateInput(inputPhoneNumber, digitsRegExp, '+')
+});
+
+inputEmail.addEventListener('input', () => {
+    validateInput(inputEmail, emailRegExp)
+});
+
+inputMessage.addEventListener('input', () => {
+        validateInput(inputMessage, textRegExp)
+});
+
+const validation = new JustValidate(".form__data");
+
+validation
+    .addField('#name', [
+        {
+            rule: 'required',
+            value: true,
+            errorMessage: 'Enter your name!'
+        },
+        {
+            rule: 'minLength',
+            value: 2,
+            errorMessage: 'The name is too short!'
+        },
+        {
+            rule: 'maxLength',
+            value: 62,
+            errorMessage: 'The name is too long!'
+        },
+    ])
+    .addField('#phoneNumber', [
+        {
+            rule: 'required',
+            value: true,
+            errorMessage: 'Enter your phone number!'
+        },
+        {
+            rule: 'maxLength',
+            value: 13,
+            errorMessage: 'The phone number is too long!'
+        },
+    ])
+    .addField('#company', [
+        {
+            rule: 'maxLength',
+            value: 62,
+            errorMessage: 'The company name is too long!'
+        },
+    ])
+    .addField('#email', [
+        {
+            rule: 'email',
+            errorMessage: 'wrong email format!'
+        },
+    ])
+    .onSuccess((e) => {
+        let details = {
+            name: inputName.value.trim(),
+            email: inputEmail.value.trim(),
+            phone: inputPhoneNumber.value.trim(),
+            message: inputMessage.value.trim(),
+            company: inputCompany.value.trim(),
+        };
+    
+            let formBody = [];
+            for (let property in details) {
+                // кодируем названия и значения параметров
+                let encodedKey = encodeURIComponent(property);
+                let encodedValue = encodeURIComponent(details[property]);
+                formBody.push(encodedKey + "=" + encodedValue);
+            }
+        // склеиваем параметры в одну строку, которую понимает Apps Script
+        formBody = formBody.join("&");
+    
+        const response = fetch(URL_APP, {
+            method: "POST",
+            headers: {"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"},
+            mode: "no-cors",
+            body: formBody,
+            })
+    
+        successWindow.style.display = "block";
+    
+        setTimeout(function(){        
+            successWindow.style.display = "none";
+            formContainer.style.display = "none";
+        }, 3000);
+    
+        body.style.overflow = "auto";
+        formData.reset();
+    });
 
 closeButton.addEventListener("click", () => {
     formContainer.style.display = "none";
     body.style.overflow = "auto";
     formData.reset();
+    $$('.just-validate-error-label').forEach((item) => {
+        item.remove()
+    });
+    $$('.just-validate-error-field').forEach((item) => {
+        item.classList.remove('just-validate-error-field')
+    }) 
 });
+    
 
-// function checkInput(input, validCharacters) {
-//     input.addEventListener('input', () => {
-//         if(!validCharacters.test(input.value[input.value.length - 1])) input.value = input.value.slice(0, [input.value.length - 1]);
-//     });
-// }
-
-// let russianLetters = /^[\u0400-\u04FF\s.,!?;:()"'-]+$/;
-// let digits = /\d/;

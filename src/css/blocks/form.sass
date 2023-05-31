@@ -20,7 +20,6 @@
     transform: translate(-50%, -50%)
     padding: 5rem 7rem
     
-
     &_color
         background-color: $dark-background-color
         border-radius: 1.1rem
@@ -34,8 +33,6 @@
     display: grid 
     grid-template-columns: 1fr 1fr
     column-gap: 4rem
-    row-gap: 2rem
-    margin-bottom: 2rem
 
 .form__element
     display: grid 
@@ -45,13 +42,13 @@
         margin-bottom: 1rem
         display: block
         font-size: 2.2rem
-
     
 .form__input
     height: 4rem
     display: block
     padding-left: 1rem
     padding-right: 1rem
+    margin-bottom: 3rem
 
     font-size: 2rem
 
@@ -71,6 +68,9 @@
     
     font-family: 'Inter', sans-serif
 
+.form__explanation
+    font-size: 1.5rem
+
 .form__buttons-row
     display: grid
     justify-content: right
@@ -78,7 +78,6 @@
     button
         display: inline-block
         
-
 .form__submit
     margin-right: 2rem
 
@@ -90,6 +89,14 @@
     .form__close-style:hover
         background-color: $second-color
         color: $primary-color
+
+.just-validate-error-label
+    font-size: 1.8rem
+    font-family: 'Inter', sans-serif
+    margin-bottom: 1rem
+
+.just-validate-error-field
+    margin-bottom: 0
 
 .form__success-window
     padding: 5rem 7rem
@@ -109,9 +116,6 @@
         margin: 0
 
 @media (max-width: 48em)
-    // .form__container
-    //     width: 92%
-    //     height: 100%
 
     .form__window
         width: 29rem
@@ -123,7 +127,6 @@
     .form__elements-wrapper
         grid-template-columns: 100%
         column-gap: 0
-        row-gap: 1.5rem
         margin-bottom: 1.5rem
 
     .form__element
@@ -145,6 +148,11 @@
         height: 8.3em
         margin-bottom: 1.5rem
         padding: 0.5rem 0.8rem
+
+    .form__explanation
+        margin-bottom: 1.5rem
+
+        font-size: 1.2rem
 
     .form__submit
         margin-right: 1rem

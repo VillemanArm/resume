@@ -15,7 +15,7 @@ const csso = require('gulp-csso');
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const webp = require('gulp-webp');
@@ -99,12 +99,14 @@ const jsTask = () => {
                 message: error.message
             }))
         }))
-        .pipe(babel()) // перевод на ES5 для старых браузеров
+
         .pipe(uglify()) // минификатор js
-        .pipe(concat("script.js"))
+
         .pipe(dest("./dist/js/", {sourcemaps: isDev})) 
         .pipe(browserSync.stream()); 
     }
+    // .pipe(concat("script.js"))
+    // .pipe(babel()) // перевод на ES5 для старых браузеров
 
 const imgTask = () => { 
     return src("./src/img/**/*.*") 
