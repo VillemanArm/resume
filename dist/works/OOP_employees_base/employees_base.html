@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link rel="shortcut icon" href="img/favicon-16x16.png" type="image/png">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/script.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="container">
+        <h1>База сотрудников</h1>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Введите данные нового сотрудника</h2>
+            <form class="form">
+                <div class="form__input-wrapper">
+                    <div class="form__element">
+                        <label for="name" class="form__label">ФИО</label>
+                        <input type="text" id="name" name="name" class="form__input form__input_color" required
+                            autocomplete="off"></input>
+                    </div>
+                    <div class="form__element">
+                        <label for="gender" class="form__label">Пол</label>
+                        <select name="gender" id="gender" class="form__input form__input_color">
+                            <option value="" disabled selected></option>
+                            <option value="Мужской">Мужской</option>
+                            <option value="Женский">Женский</option>
+                        </select>
+                    </div>
+                    <div class="form__element">
+                        <label for="phone" class="form__label">Номер телефона</label>
+                        <input type="text" id="phone" name="phone" class="form__input form__input_color" required
+                            autocomplete="off"></input>
+                    </div>
+                    <div class="form__element">
+                        <label for="post" class="form__label">Должность</label>
+                        <select name="post" id="post" class="form__input form__input_color">
+                            <option value="" disabled selected></option>
+                            <option value="водитель">водитель</option>
+                            <option value="диспетчер">диспетчер</option>
+                            <option value="механик">механик</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__buttons">
+                    <button class="form__button" type="submit">Записать</button>
+                    <button class="form__button" type="reset">Сбросить</button>
+                </div>
+            </form>
+        </section>
+        <section class="container">
+            <h2>Сотрудники в штате</h2>
+            <table class="table" cellspacing="0">
+                <thead>
+                    <td class="table__header table__name">ФИО</td>
+                    <td class="table__header table__gender">Пол</td>
+                    <td class="table__header table__phone">Номер телефона</td>
+                    <td class="table__header table__post">Должность</td>
+                    <td class="table__header table__del">Удалить</td>
+                </thead>
+            </table>
+
+        </section>
+
+        <section class="container">
+            <div class="code">
+                <h2>Javascript code used on this page:</h2>
+
+                <pre class="hljs"
+                    style="color: rgb(169, 183, 198); background: rgb(40, 43, 46); display: block; overflow-x: auto; padding: 0.5em;">
+<span class="hljs-meta" style="color: rgb(187, 181, 41);">
+'use strict'</span>;
+
+<span class="hljs-keyword" style="color: rgb(204, 120, 50);">let</span> form = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string" style="color: rgb(106, 135, 89);">'.form'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 120, 50);">let</span> name = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string" style="color: rgb(106, 135, 89);">'#name'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 120, 50);">let</span> gender = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string" style="color: rgb(106, 135, 89);">'#gender'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 120, 50);">let</span> phone = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string" style="color: rgb(106, 135, 89);">'#phone'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 120, 50);">let</span> post = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string" style="color: rgb(106, 135, 89);">'#post'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 120, 50);">let</span> submit = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string" style="color: rgb(106, 135, 89);">'.form__button[type=submit]'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 120, 50);">let</span> table = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string" style="color: rgb(106, 135, 89);">'.table'</span>)
+
+<span class="hljs-class"><span class="hljs-keyword" style="color: rgb(204, 120, 50);">class</span> <span class="hljs-title" style="color: rgb(255, 198, 109);">Person</span> </span>{
+    <span class="hljs-keyword" style="color: rgb(204, 120, 50);">constructor</span>(name, gender, phone) {
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">this</span>.name = name
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">this</span>.gender = gender
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">this</span>.phone = phone
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword" style="color: rgb(204, 120, 50);">class</span> <span class="hljs-title" style="color: rgb(255, 198, 109);">Employee</span> <span class="hljs-keyword" style="color: rgb(204, 120, 50);">extends</span> <span class="hljs-title" style="color: rgb(255, 198, 109);">Person</span> </span>{
+    <span class="hljs-keyword" style="color: rgb(204, 120, 50);">constructor</span>(name, gender, phone, post) {
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">super</span>(name, gender, phone)
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">this</span>.post = post
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">this</span>.id = Employee.employees.length
+    }
+
+    <span class="hljs-keyword" style="color: rgb(204, 120, 50);">static</span> employees = []
+
+    <span class="hljs-keyword" style="color: rgb(204, 120, 50);">static</span> getEmployees() {
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">if</span> (localStorage.employees) {
+            Employee.employees = <span class="hljs-built_in">JSON</span>.parse(localStorage.employees)
+            createTable()
+        }<span class="hljs-keyword" style="color: rgb(204, 120, 50);">else</span> {
+            localStorage.employees = <span class="hljs-built_in">JSON</span>.stringify(employees)
+        }
+    }
+
+}
+
+<span class="hljs-keyword" style="color: rgb(204, 120, 50);">const</span> createTable = () =&gt; {
+    table.querySelectorAll(<span class="hljs-string" style="color: rgb(106, 135, 89);">'.table__row'</span>).forEach((row) =&gt; {
+        row.remove()
+    })
+
+    Employee.employees.forEach((employee) =&gt; {
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">const</span> newRow = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string" style="color: rgb(106, 135, 89);">'tr'</span>)
+        newRow.classList.add(<span class="hljs-string" style="color: rgb(106, 135, 89);">'table__row'</span>)
+        newRow.innerHTML = <span class="hljs-string" style="color: rgb(106, 135, 89);">`
+        &lt;td class="table__name"&gt;<span class="hljs-subst">${employee.name}</span>&lt;/td&gt;
+        &lt;td class="table__gender"&gt;<span class="hljs-subst">${employee.gender}</span>&lt;/td&gt;
+        &lt;td class="table__phone"&gt;<span class="hljs-subst">${employee.phone}</span>&lt;/td&gt;
+        &lt;td class="table__post"&gt;<span class="hljs-subst">${employee.post}</span>&lt;/td&gt;
+        &lt;td class="table__del"&gt;&lt;button class="table__del-button" id="<span class="hljs-subst">${employee.id}</span>"&gt;Удалить&lt;/button&gt;&lt;/td&gt;
+`</span>
+        table.append(newRow)
+
+        <span class="hljs-keyword" style="color: rgb(204, 120, 50);">const</span> delButton = <span class="hljs-built_in">document</span>.getElementById(employee.id)
+        delButton.addEventListener(<span class="hljs-string" style="color: rgb(106, 135, 89);">'click'</span>, () =&gt; {
+            Employee.employees.forEach((employee) =&gt; {
+                <span class="hljs-keyword" style="color: rgb(204, 120, 50);">if</span> (employee.id == delButton.id) {
+                    Employee.employees.pop(employee)
+                    localStorage.employees = <span class="hljs-built_in">JSON</span>.stringify(Employee.employees)
+                    createTable()
+                }
+            })
+        })
+    })
+}
+
+Employee.getEmployees()
+
+submit.addEventListener(<span class="hljs-string" style="color: rgb(106, 135, 89);">'click'</span>, (event) =&gt; {
+    event.preventDefault() 
+    <span class="hljs-keyword" style="color: rgb(204, 120, 50);">const</span> newEmployee = <span class="hljs-keyword" style="color: rgb(204, 120, 50);">new</span> Employee(name.value, gender.value, phone.value, post.value)
+    Employee.employees.push(newEmployee)
+    localStorage.employees = <span class="hljs-built_in">JSON</span>.stringify(Employee.employees)
+    createTable()
+    form.reset()
+})</pre>
+            </div>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>

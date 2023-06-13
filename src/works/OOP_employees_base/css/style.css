@@ -1,0 +1,255 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-v18-latin_cyrillic-300.woff2") format("woff2"), url("../fonts/montserrat-v18-latin_cyrillic-300.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-v18-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/montserrat-v18-latin_cyrillic-700.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-v18-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/montserrat-v18-latin_cyrillic-regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat_cyrillic_500.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background-color: #9bdff2;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+.container {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input {
+  background-color: #f2f6f7;
+  border: 0.2rem solid #0997ba;
+  border-radius: 0.4rem;
+}
+input:focus {
+  outline: none;
+}
+
+select {
+  background-color: #f2f6f7;
+  border: 0.2rem solid #0997ba;
+  border-radius: 0.4rem;
+}
+select:focus {
+  outline: none;
+}
+
+button {
+  width: 10rem;
+  height: 3rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border: 0.2rem solid #0997ba;
+  border-radius: 0.4rem;
+  background-color: #0997ba;
+  color: #fff;
+}
+button:hover {
+  color: #0997ba;
+  background-color: #f2f6f7;
+}
+
+@media (max-width: 1260px) {
+  html {
+    font-size: 0.7936507937vw;
+  }
+  .container {
+    width: auto;
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+}
+@media (max-width: 780px) {
+  html {
+    font-size: 3.125vw;
+  }
+  h1 {
+    font-size: 2.4rem;
+  }
+  h2 {
+    margin-top: 3rem;
+    font-size: 1.6rem;
+  }
+  .container {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  button {
+    width: 10rem;
+    height: 2.8rem;
+    font-size: 1.2rem;
+  }
+}
+
+.form__input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem 4rem;
+}
+
+.form__element {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+.form__label {
+  justify-self: start;
+  align-self: center;
+  font-size: 1.6rem;
+}
+
+.form__input {
+  width: 30rem;
+  height: 2.4rem;
+  justify-self: end;
+  font-size: 1.6rem;
+}
+
+.form__buttons {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  margin-top: 1rem;
+}
+
+.form__button:nth-child(2) {
+  margin-left: 2rem;
+}
+
+@media (max-width: 780px) {
+  .form__input-wrapper {
+    grid-template-columns: 100%;
+    row-gap: 1rem;
+  }
+  .form__label {
+    font-size: 1.2rem;
+  }
+  .form__input {
+    width: 18rem;
+    height: 2.2rem;
+    justify-self: end;
+    font-size: 1.2rem;
+  }
+  .form__button:nth-child(2) {
+    margin-left: 1rem;
+  }
+}
+.table {
+  font-size: 1.6rem;
+  border: 0.2rem solid #0997ba;
+  border-radius: 0.4rem;
+}
+
+table td {
+  padding: 0.8rem;
+  border: 0.2rem solid #0997ba;
+  background-color: #f2f6f7;
+}
+
+.table__header {
+  font-weight: 500;
+  text-align: center;
+  background-color: #0997ba;
+  color: #fff;
+}
+
+.table__name {
+  width: 42rem;
+}
+
+.table__gender {
+  width: 12rem;
+}
+
+.table__phone {
+  width: 23rem;
+}
+
+.table__post {
+  width: 23rem;
+}
+
+.table__del {
+  width: 20rem;
+}
+
+.table__del-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 780px) {
+  .table {
+    width: 30rem;
+    font-size: 0.8rem;
+    border: 0.1rem solid #0997ba;
+  }
+  table td {
+    padding: 0.4rem;
+    border: 0.1rem solid #0997ba;
+  }
+  .table__row {
+    font-size: 0.8rem;
+  }
+  .table__name {
+    width: 10rem;
+  }
+  .table__gender {
+    width: 8rem;
+  }
+  .table__phone {
+    width: 10rem;
+  }
+  .table__post {
+    width: 10rem;
+  }
+  .table__del {
+    width: 8rem;
+  }
+  .table__del-button {
+    width: 6rem;
+    height: 2.4rem;
+    font-size: 0.8rem;
+  }
+}
+.code {
+  margin-top: 5rem;
+}
+
+/*# sourceMappingURL=style.css.map */
