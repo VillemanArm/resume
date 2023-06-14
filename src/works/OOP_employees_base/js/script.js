@@ -1,5 +1,6 @@
 'use strict';
 
+// get elements from HTML
 let form = document.querySelector('.form')
 let name = document.querySelector('#name')
 let gender = document.querySelector('#gender')
@@ -8,6 +9,7 @@ let post = document.querySelector('#post')
 let submit = document.querySelector('.form__button[type=submit]')
 let table = document.querySelector('.table')
 
+// Сreate classes for data storage. Class Person create only for inheritance example.
 class Person {
     constructor(name, gender, phone) {
         this.name = name
@@ -23,6 +25,8 @@ class Employee extends Person {
         this.id = Employee.employees.length
     }
 
+    // Сlass stores the employees list for unique id creation.
+    // The id used to create a relationship with instances of the class. 
     static employees = []
 
     static getEmployees() {
@@ -36,6 +40,7 @@ class Employee extends Person {
 
 }
 
+//function for table creation
 const createTable = () => {
     table.querySelectorAll('.table__row').forEach((row) => {
         row.remove()
@@ -68,6 +73,7 @@ const createTable = () => {
 
 Employee.getEmployees()
 
+// add new employee and create new table row
 submit.addEventListener('click', (event) => {
     event.preventDefault() 
     const newEmployee = new Employee(name.value, gender.value, phone.value, post.value)
