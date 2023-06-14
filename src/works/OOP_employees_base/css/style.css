@@ -83,6 +83,10 @@ button:hover {
   background-color: #f2f6f7;
 }
 
+pre {
+  font-size: 1.6rem;
+}
+
 @media (max-width: 1260px) {
   html {
     font-size: 0.7936507937vw;
@@ -112,6 +116,9 @@ button:hover {
     width: 10rem;
     height: 2.8rem;
     font-size: 1.2rem;
+  }
+  pre {
+    font-size: 1rem;
   }
 }
 
