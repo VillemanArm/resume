@@ -34,7 +34,7 @@ class Employee extends Person {
             Employee.employees = JSON.parse(localStorage.employees)
             createTable()
         }else {
-            localStorage.employees = JSON.stringify(employees)
+            localStorage.employees = JSON.stringify(Employee.employees)
         }
     }
 
