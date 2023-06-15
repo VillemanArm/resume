@@ -74,59 +74,57 @@
             <h2>Javascript code used on this page:</h2>
 
             <pre class="hljs"
-                style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(34, 34, 34); color: rgb(255, 255, 255);">
-<span class="hljs-meta" style="color: rgb(171, 135, 93);">'use strict'</span>;
+                style="display: block; overflow-x: auto; background: rgb(45, 45, 45); color: rgb(204, 204, 204); padding: 0.5em;">
+<span class="hljs-meta" style="color: rgb(249, 145, 87);">'use strict'</span>;
 
-<span class="hljs-comment" style="color: rgb(119, 119, 119);">// get elements from HTML</span>
-<span class="hljs-keyword" style="color: rgb(143, 156, 108);">let</span> form = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(143, 156, 108);">'.form'</span>)
-<span class="hljs-keyword" style="color: rgb(143, 156, 108);">let</span> name = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(143, 156, 108);">'#name'</span>)
-<span class="hljs-keyword" style="color: rgb(143, 156, 108);">let</span> gender = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(143, 156, 108);">'#gender'</span>)
-<span class="hljs-keyword" style="color: rgb(143, 156, 108);">let</span> phone = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(143, 156, 108);">'#phone'</span>)
-<span class="hljs-keyword" style="color: rgb(143, 156, 108);">let</span> post = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(143, 156, 108);">'#post'</span>)
-<span class="hljs-keyword" style="color: rgb(143, 156, 108);">let</span> submit = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(143, 156, 108);">'.form__button[type=submit]'</span>)
-<span class="hljs-keyword" style="color: rgb(143, 156, 108);">let</span> table = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(143, 156, 108);">'.table'</span>)
+<span class="hljs-comment" style="color: rgb(153, 153, 153);">// get elements from HTML</span>
+<span class="hljs-keyword" style="color: rgb(204, 153, 204);">let</span> form = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(153, 204, 153);">'.form'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 153, 204);">let</span> name = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(153, 204, 153);">'#name'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 153, 204);">let</span> gender = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(153, 204, 153);">'#gender'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 153, 204);">let</span> phone = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(153, 204, 153);">'#phone'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 153, 204);">let</span> post = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(153, 204, 153);">'#post'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 153, 204);">let</span> submit = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(153, 204, 153);">'.form__button[type=submit]'</span>)
+<span class="hljs-keyword" style="color: rgb(204, 153, 204);">let</span> table = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.querySelector(<span class="hljs-string" style="color: rgb(153, 204, 153);">'.table'</span>)
 
-<span class="hljs-comment" style="color: rgb(119, 119, 119);">// Сreate classes for data storage. Class Person create only for inheritance example.</span>
-<span class="hljs-class"><span class="hljs-keyword" style="color: rgb(143, 156, 108);">class</span> <span class="hljs-title" style="color: rgb(155, 134, 155);">Person</span> </span>{
-    <span class="hljs-keyword" style="color: rgb(143, 156, 108);">constructor</span>(name, gender, phone) {
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">this</span>.name = name
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">this</span>.gender = gender
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">this</span>.phone = phone
+<span class="hljs-comment" style="color: rgb(153, 153, 153);">// Сreate classes for data storage.</span>
+<span class="hljs-class"><span class="hljs-keyword" style="color: rgb(204, 153, 204);">class</span> <span class="hljs-title" style="color: rgb(102, 153, 204);">CompanyEmployee</span> </span>{
+    <span class="hljs-keyword" style="color: rgb(204, 153, 204);">constructor</span>(name, gender, phone) {
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">this</span>.name = name
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">this</span>.gender = gender
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">this</span>.phone = phone
     }
 }
 
-<span class="hljs-class"><span class="hljs-keyword" style="color: rgb(143, 156, 108);">class</span> <span class="hljs-title" style="color: rgb(155, 134, 155);">Employee</span> <span class="hljs-keyword" style="color: rgb(143, 156, 108);">extends</span> <span class="hljs-title" style="color: rgb(155, 134, 155);">Person</span> </span>{
-    <span class="hljs-keyword" style="color: rgb(143, 156, 108);">constructor</span>(name, gender, phone, post) {
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">super</span>(name, gender, phone)
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">this</span>.post = post
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">this</span>.id = Employee.employees.length
+<span class="hljs-class"><span class="hljs-keyword" style="color: rgb(204, 153, 204);">class</span> <span class="hljs-title" style="color: rgb(102, 153, 204);">EmployeeOnPost</span> <span class="hljs-keyword" style="color: rgb(204, 153, 204);">extends</span> <span class="hljs-title" style="color: rgb(102, 153, 204);">CompanyEmployee</span> </span>{
+    <span class="hljs-keyword" style="color: rgb(204, 153, 204);">constructor</span>(name, gender, phone, post) {
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">super</span>(name, gender, phone)
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">this</span>.post = post
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">this</span>.id = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">Date</span>.now()
     }
 
-    <span class="hljs-comment" style="color: rgb(119, 119, 119);">// Сlass stores the employees list for unique id creation.</span>
-    <span class="hljs-comment" style="color: rgb(119, 119, 119);">// The id used to create a relationship with instances of the class. </span>
-    <span class="hljs-keyword" style="color: rgb(143, 156, 108);">static</span> employees = []
+    <span class="hljs-keyword" style="color: rgb(204, 153, 204);">static</span> employeesList = []
 
-    <span class="hljs-keyword" style="color: rgb(143, 156, 108);">static</span> getEmployees() {
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">if</span> (localStorage.employees) {
-            Employee.employees = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">JSON</span>.parse(localStorage.employees)
+    <span class="hljs-keyword" style="color: rgb(204, 153, 204);">static</span> getEmployees() {
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">if</span> (localStorage.employeesList) {
+            EmployeeOnPost.employeesList = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">JSON</span>.parse(localStorage.employeesList)
             createTable()
-        }<span class="hljs-keyword" style="color: rgb(143, 156, 108);">else</span> {
-            localStorage.employees = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">JSON</span>.stringify(Employee.employees)
+        }<span class="hljs-keyword" style="color: rgb(204, 153, 204);">else</span> {
+            localStorage.employeesList = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">JSON</span>.stringify(EmployeeOnPost.employeesList)
         }
     }
 
 }
 
-<span class="hljs-comment" style="color: rgb(119, 119, 119);">//function for table creation</span>
-<span class="hljs-keyword" style="color: rgb(143, 156, 108);">const</span> createTable = () =&gt; {
-    table.querySelectorAll(<span class="hljs-string" style="color: rgb(143, 156, 108);">'.table__row'</span>).forEach((row) =&gt; {
+<span class="hljs-comment" style="color: rgb(153, 153, 153);">//function for table creation</span>
+<span class="hljs-keyword" style="color: rgb(204, 153, 204);">const</span> createTable = () =&gt; {
+    table.querySelectorAll(<span class="hljs-string" style="color: rgb(153, 204, 153);">'.table__row'</span>).forEach((row) =&gt; {
         row.remove()
     })
 
-    Employee.employees.forEach((employee) =&gt; {
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">const</span> newRow = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.createElement(<span class="hljs-string" style="color: rgb(143, 156, 108);">'tr'</span>)
-        newRow.classList.add(<span class="hljs-string" style="color: rgb(143, 156, 108);">'table__row'</span>)
-        newRow.innerHTML = <span class="hljs-string" style="color: rgb(143, 156, 108);">`
+    EmployeeOnPost.employeesList.forEach((employee) =&gt; {
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">const</span> newRow = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.createElement(<span class="hljs-string" style="color: rgb(153, 204, 153);">'tr'</span>)
+        newRow.classList.add(<span class="hljs-string" style="color: rgb(153, 204, 153);">'table__row'</span>)
+        newRow.innerHTML = <span class="hljs-string" style="color: rgb(153, 204, 153);">`
         &lt;td class="table__name"&gt;<span class="hljs-subst">${employee.name}</span>&lt;/td&gt;
         &lt;td class="table__gender"&gt;<span class="hljs-subst">${employee.gender}</span>&lt;/td&gt;
         &lt;td class="table__phone"&gt;<span class="hljs-subst">${employee.phone}</span>&lt;/td&gt;
@@ -135,12 +133,13 @@
 `</span>
         table.append(newRow)
 
-        <span class="hljs-keyword" style="color: rgb(143, 156, 108);">const</span> delButton = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">document</span>.getElementById(employee.id)
-        delButton.addEventListener(<span class="hljs-string" style="color: rgb(143, 156, 108);">'click'</span>, () =&gt; {
-            Employee.employees.forEach((employee) =&gt; {
-                <span class="hljs-keyword" style="color: rgb(143, 156, 108);">if</span> (employee.id == delButton.id) {
-                    Employee.employees.pop(employee)
-                    localStorage.employees = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">JSON</span>.stringify(Employee.employees)
+        <span class="hljs-keyword" style="color: rgb(204, 153, 204);">const</span> delButton = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">document</span>.getElementById(employee.id)
+        delButton.addEventListener(<span class="hljs-string" style="color: rgb(153, 204, 153);">'click'</span>, () =&gt; {
+            EmployeeOnPost.employeesList.forEach((employee) =&gt; {
+                <span class="hljs-keyword" style="color: rgb(204, 153, 204);">if</span> (employee.id == delButton.id) {
+                    <span class="hljs-keyword" style="color: rgb(204, 153, 204);">const</span> employeeIndex = EmployeeOnPost.employeesList.indexOf(employee)
+                    EmployeeOnPost.employeesList.splice(employeeIndex, <span class="hljs-number" style="color: rgb(249, 145, 87);">1</span>)
+                    localStorage.employeesList = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">JSON</span>.stringify(EmployeeOnPost.employeesList)
                     createTable()
                 }
             })
@@ -148,19 +147,17 @@
     })
 }
 
-Employee.getEmployees()
+EmployeeOnPost.getEmployees()
 
-<span class="hljs-comment" style="color: rgb(119, 119, 119);">// add new employee and create new table row</span>
-submit.addEventListener(<span class="hljs-string" style="color: rgb(143, 156, 108);">'click'</span>, (event) =&gt; {
+<span class="hljs-comment" style="color: rgb(153, 153, 153);">// add new employee and create new table row</span>
+submit.addEventListener(<span class="hljs-string" style="color: rgb(153, 204, 153);">'click'</span>, (event) =&gt; {
     event.preventDefault() 
-    <span class="hljs-keyword" style="color: rgb(143, 156, 108);">const</span> newEmployee = <span class="hljs-keyword" style="color: rgb(143, 156, 108);">new</span> Employee(name.value, gender.value, phone.value, post.value)
-    Employee.employees.push(newEmployee)
-    localStorage.employees = <span class="hljs-built_in" style="color: rgb(171, 135, 93);">JSON</span>.stringify(Employee.employees)
+    <span class="hljs-keyword" style="color: rgb(204, 153, 204);">const</span> newEmployee = <span class="hljs-keyword" style="color: rgb(204, 153, 204);">new</span> EmployeeOnPost(name.value, gender.value, phone.value, post.value)
+    EmployeeOnPost.employeesList.push(newEmployee)
+    localStorage.employeesList = <span class="hljs-built_in" style="color: rgb(249, 145, 87);">JSON</span>.stringify(EmployeeOnPost.employeesList)
     createTable()
     form.reset()
-})                   
-                    </pre>
-
+    })</pre>
         </section>
     </main>
 

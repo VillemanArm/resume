@@ -9,8 +9,8 @@ let post = document.querySelector('#post')
 let submit = document.querySelector('.form__button[type=submit]')
 let table = document.querySelector('.table')
 
-// Сreate classes for data storage. Class Person create only for inheritance example.
-class Person {
+// Сreate classes for data storage.
+class CompanyEmployee {
     constructor(name, gender, phone) {
         this.name = name
         this.gender = gender
@@ -18,23 +18,21 @@ class Person {
     }
 }
 
-class Employee extends Person {
+class EmployeeOnPost extends CompanyEmployee {
     constructor(name, gender, phone, post) {
         super(name, gender, phone)
         this.post = post
-        this.id = Employee.employees.length
+        this.id = Date.now()
     }
 
-    // Сlass stores the employees list for unique id creation.
-    // The id used to create a relationship with instances of the class. 
-    static employees = []
+    static employeesList = []
 
     static getEmployees() {
-        if (localStorage.employees) {
-            Employee.employees = JSON.parse(localStorage.employees)
+        if (localStorage.employeesList) {
+            EmployeeOnPost.employeesList = JSON.parse(localStorage.employeesList)
             createTable()
         }else {
-            localStorage.employees = JSON.stringify(Employee.employees)
+            localStorage.employeesList = JSON.stringify(EmployeeOnPost.employeesList)
         }
     }
 
@@ -46,7 +44,7 @@ const createTable = () => {
         row.remove()
     })
 
-    Employee.employees.forEach((employee) => {
+    EmployeeOnPost.employeesList.forEach((employee) => {
         const newRow = document.createElement('tr')
         newRow.classList.add('table__row')
         newRow.innerHTML = `
@@ -60,10 +58,11 @@ const createTable = () => {
 
         const delButton = document.getElementById(employee.id)
         delButton.addEventListener('click', () => {
-            Employee.employees.forEach((employee) => {
+            EmployeeOnPost.employeesList.forEach((employee) => {
                 if (employee.id == delButton.id) {
-                    Employee.employees.pop(employee)
-                    localStorage.employees = JSON.stringify(Employee.employees)
+                    const employeeIndex = EmployeeOnPost.employeesList.indexOf(employee)
+                    EmployeeOnPost.employeesList.splice(employeeIndex, 1)
+                    localStorage.employeesList = JSON.stringify(EmployeeOnPost.employeesList)
                     createTable()
                 }
             })
@@ -71,14 +70,14 @@ const createTable = () => {
     })
 }
 
-Employee.getEmployees()
+EmployeeOnPost.getEmployees()
 
 // add new employee and create new table row
 submit.addEventListener('click', (event) => {
     event.preventDefault() 
-    const newEmployee = new Employee(name.value, gender.value, phone.value, post.value)
-    Employee.employees.push(newEmployee)
-    localStorage.employees = JSON.stringify(Employee.employees)
+    const newEmployee = new EmployeeOnPost(name.value, gender.value, phone.value, post.value)
+    EmployeeOnPost.employeesList.push(newEmployee)
+    localStorage.employeesList = JSON.stringify(EmployeeOnPost.employeesList)
     createTable()
     form.reset()
 })
