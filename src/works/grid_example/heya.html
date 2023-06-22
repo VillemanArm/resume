@@ -5,16 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/icon/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>GRID example</title>
 </head>
 
 <body>
+    <div class="background-top">
+        <img src="img/body/Background.png" alt="">
+    </div>
     <header>
         <section class="header">
-            <div class="header__logo"></div>
-            <div>
-                <div class="header__navigation">
+            <div class="header__logo">
+                <img src="img/header/Logo.svg" alt="">
+            </div>
+            <div class="header__navigation">
+                <div class="header__links">
                     <a href="#" class="header__link">Home</a>
                     <a href="#" class="header__link">Docs</a>
                     <a href="#" class="header__link">Help</a>
@@ -27,21 +33,24 @@
     <main>
         <section class="search">
             <h1>Our Newsroom</h1>
-            <input type="text" class="search__input" placeholder="Search article"><button type="submit"></button>
-        </section>
-        <div class="search__tags">
-            <span>Popular Tags :</span>
-            <button>Design</button>
-            <button>User Experience</button>
-            <button>User Interfaces</button>
-        </div>
+            <form action="#">
+                <input type="text" class="search__input" placeholder="Search article">
+                <button class="search__button" type="submit">Search</button>
+            </form>
+            <div class="search__tags">
+                <span>Popular Tags :</span>
+                <button>Design</button>
+                <button>User Experience</button>
+                <button>User Interfaces</button>
+            </div>
         </section>
         <section class="featured">
-            <div class="featured__img"><img src="img/featured/airport.jpg" alt=""></div>
+            <div class="featured__img"><img src="img/featured/airport.png" alt=""></div>
             <div class="featured__info">
                 <div class="featured__label">FEATURED</div>
-                <h2></h2>
-                <span class="featured__content text-content"></span>
+                <h2>Cheap Airline Tickets Great Ways To Save</h2>
+                <span class="featured__content text-content">In this digital generation where information can be easily
+                    obtained within seconds, business cards ...</span>
                 <div class="item-footer">
                     <div class="item-footer__user">
                         <div class="item-footer__avatar"><img src="img/featured/avatar1.png" alt=""></div>
