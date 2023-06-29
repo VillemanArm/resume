@@ -67,6 +67,10 @@ h1 {
 
 h2 {
   font-family: "Gotham", sans-serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+  letter-spacing: 0.02rem;
 }
 
 h3 {
@@ -206,6 +210,96 @@ input, button {
   color: #959EAD;
   background: #fff;
   backdrop-filter: none;
+}
+
+.featured {
+  height: 38rem;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 3.2rem;
+  background-color: #ffffff;
+  border-radius: 1.6rem;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.featured__img {
+  width: 57rem;
+  height: 38rem;
+}
+.featured__img img {
+  margin-left: -0.1rem;
+}
+
+.featured__info {
+  width: 53.8rem;
+  padding: 2.6rem 5rem 3.6rem 0;
+}
+.featured__info > h2 {
+  color: #183B56;
+}
+.featured__info > span {
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  color: #5A7184;
+}
+.featured__info > .item-footer {
+  margin-top: 4.3rem;
+}
+
+.featured__label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #1565D8;
+  background-color: rgba(54, 179, 126, 0.15);
+  border-radius: 1.8rem;
+}
+
+.item-footer {
+  height: 4.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-footer__user {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 1.2rem;
+}
+
+.item-footer__avatar {
+  width: 4rem;
+  height: 4rem;
+}
+
+.item-footer__user-info {
+  display: grid;
+}
+
+.item-footer__user-name {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+  color: #183B56;
+}
+
+.item-footer__user-verification {
+  margin-top: 0.4rem;
+  line-height: 1.9rem;
+}
+.item-footer__user-verification > img {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.8rem;
+}
+
+.item-footer__date {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #5A7184;
 }
 
 /*# sourceMappingURL=style.css.map */
