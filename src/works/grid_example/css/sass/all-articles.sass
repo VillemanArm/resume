@@ -1,0 +1,46 @@
+.all-articles
+    margin-top: 9.6rem
+
+.all-articles__description
+    display: block
+    width: 60rem
+    margin-top: 1.6rem
+
+.all-articles_featured
+    margin-top: 4.8rem
+    display: grid
+    grid-auto-flow: column
+    column-gap: 3rem
+
+.all-articles__featured-item
+    width: 55.5rem
+    height: 60rem
+
+    &>img
+        position: relative
+        top: -60rem     
+        border-radius: 1.6rem
+
+    // &>.featured-label
+    //     margin-top: -50rem
+
+.all-articles__featured-item-content
+    position: relative
+    z-index: 2        
+    width: 55.5rem
+    height: 60rem
+    padding: 3.2rem 4.8rem 4.2rem 4.8rem
+    display: grid
+    align-content: space-between
+
+    &>.featured-label
+        margin-left: -1.6rem
+
+    &>div>h2
+        color: $primary-color
+
+    &>div>.item-footer
+        margin-top: 3.2rem
+        color: $primary-color
+
+
