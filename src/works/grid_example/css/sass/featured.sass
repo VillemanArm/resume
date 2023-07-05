@@ -1,5 +1,6 @@
 .featured
     height: 38rem
+    margin-top: 9.6rem
     display: grid
     grid-auto-flow: column
     column-gap: 3.2rem
@@ -7,6 +8,10 @@
     background-color: #ffffff
     border-radius: 1.6rem
     box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.15)
+
+@media(min-width: 780px)
+    .featured:hover
+        transform: scale(1.01)
 
 .featured__img
     width: 57rem
