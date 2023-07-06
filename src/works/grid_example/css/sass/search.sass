@@ -23,7 +23,7 @@
 
 .search__button   
     position: relative    
-    padding: 0.9rem 2rem
+    padding: 0.7rem 1.7rem
     top: -4.6rem
     left: 65.9rem
 
@@ -33,6 +33,7 @@
     color: $primary-color
     background-color: #1565D8
     border-radius: 0.8rem
+    border: 0.2rem solid $button-color
 
 .search__tags
     position: relative  
@@ -67,3 +68,10 @@
             color: #959EAD
             background: #fff
             backdrop-filter: none
+
+@media(min-width: 780px)
+    .search__button:hover
+        
+        color: $button-color
+        background-color: transparent
+        

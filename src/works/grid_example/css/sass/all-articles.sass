@@ -15,22 +15,25 @@
 .all-articles__featured-item
     width: 55.5rem
     height: 60rem
+    position: relative
 
     border-radius: 1.6rem
 
     &>img
-        // position: relative
-        margin-top: -60rem     
         border-radius: 1.6rem
 
 .all-articles__featured-item-content
-    position: relative
+    position: absolute
+    top: 0
     z-index: 2        
     width: 55.5rem
     height: 60rem
     padding: 3.2rem 4.8rem 4.2rem 4.8rem
     display: grid
     align-content: space-between
+
+    border-radius: 1.6rem
+    background: linear-gradient(180deg, rgba(24, 59, 86, 0.00) 0%, rgba(22, 49, 70, 0.45) 45.38%, #152532 100%)
 
     &>.featured-label
         margin-left: -1.6rem
@@ -53,21 +56,24 @@
     width: 36rem
     height: 50rem
     border-radius: 1.6rem
+    position: relative
 
-    &>img
-        position: relative
-        top: -50rem     
+    &>img  
         border-radius: 1.6rem
 
 
 .all-articles__common-item-content
-    width: 35rem
+    width: 36rem
     height: 50rem
     padding: 3.2rem 3.2rem 4rem 3.2rem 
-    position: relative
+    position: absolute
+    top: 0
     z-index: 2
     display: grid
     align-content: end
+
+    border-radius: 1.6rem
+    background: linear-gradient(180deg, rgba(24, 59, 86, 0.00) 0%, rgba(22, 49, 70, 0.45) 45.38%, #152532 100%)
 
     &>.item-footer
         margin-top: 3.2rem
