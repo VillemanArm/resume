@@ -1,0 +1,103 @@
+$primary-color: #ffffff
+$secondary-color: #183B56
+$button-color: #1565D8
+$footer-color: #5A7184
+
+*
+    box-sizing: border-box
+    margin: 0
+
+html
+      font-size: 10px
+
+body
+    font-family: 'Open Sans', sans-serif
+    font-weight: 400
+
+.background-top
+    width: 144rem
+    position: absolute
+    z-index: -1
+    left: 50%
+    transform: translate(-50%, 0)
+
+section
+    display: block
+    width: 114rem
+    margin-left: auto
+    margin-right: auto
+
+img 
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+a 
+    text-decoration: none
+    color: $primary-color
+    
+h1
+    margin: 0
+
+    font-family: "Gotham", sans-serif
+    font-size: 4.8rem
+    line-height: 6rem
+    text-align: center
+    letter-spacing: 0.02rem
+    font-weight: 600
+
+    color: $primary-color
+
+h2
+    margin: 0
+
+    font-family: "Gotham", sans-serif
+    font-size: 3.6rem
+    font-weight: 700
+    line-height: 4.8rem
+    letter-spacing: 0.02rem
+
+    color: $secondary-color
+
+h3
+    margin: 0
+
+    font-family: "Gotham", sans-serif
+    font-size: 2.8rem
+    font-weight: 700
+    line-height: 3.6rem
+
+h4
+    margin: 0
+    
+    font-size: 1.8rem
+    font-weight: 700
+
+
+
+input, button 
+    border: none
+    outline: none
+    cursor: pointer
+
+.text-content
+        font-size: 1.8rem
+        line-height: 3.2rem
+
+        color: #5A7184
+
+@media (max-width: 1440px) 
+    html 
+        font-size: 0,6944444444444444vw
+  
+@media (max-width: 780px) 
+    html 
+        font-size: 3.125vw
+
+    section
+        width: 30rem
+        margin-right: auto
+        margin-left: auto 
+
+    .background-top
+        width: 100%

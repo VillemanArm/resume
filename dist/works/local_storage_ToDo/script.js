@@ -1,14 +1,16 @@
 'use strict';
 
+// functions for shorthand access to page elements
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+// get page elements
 const todoControl = $('.todo-control');
 const headerInput = $('.header-input');
 const todoList = $('.todo-list');
 const todoCompleted = $('.todo-completed');
 
-
+// create to do list
 function render() {
     todoList.innerHTML = ''
     todoCompleted.innerHTML = ''
@@ -43,6 +45,7 @@ function render() {
     })
 }
 
+// create a new task on button click
 todoControl.addEventListener('submit', (event) => {
     event.preventDefault()
 
@@ -60,7 +63,9 @@ todoControl.addEventListener('submit', (event) => {
     }
 })
 
+// create storage for todo list
 if (!localStorage.todoData) localStorage.todoData = JSON.stringify([])
 
+// get todo list from storage and render it
 let todoData = JSON.parse(localStorage.todoData)
 render()

@@ -1,0 +1,131 @@
+.all-articles
+    margin-top: 9.6rem
+
+.all-articles__description
+    display: block
+    width: 60rem
+    margin-top: 1.6rem
+
+.all-articles_featured
+    margin-top: 4.8rem
+    display: grid
+    grid-auto-flow: column
+    column-gap: 3rem
+
+.all-articles__featured-item
+    width: 55.5rem
+    height: 60rem
+    position: relative
+
+    border-radius: 1.6rem
+
+    &>img
+        border-radius: 1.6rem
+
+.all-articles__featured-item-content
+    position: absolute
+    top: 0
+    z-index: 2        
+    width: 55.5rem
+    height: 60rem
+    padding: 3.2rem 4.8rem 4.2rem 4.8rem
+    display: grid
+    align-content: space-between
+
+    border-radius: 1.6rem
+    background: linear-gradient(180deg, rgba(24, 59, 86, 0.00) 0%, rgba(22, 49, 70, 0.45) 45.38%, #152532 100%)
+
+    &>.featured-label
+        margin-left: -1.6rem
+
+    &>div>h2
+        color: $primary-color
+
+    &>div>.item-footer
+        margin-top: 3.2rem
+        color: $primary-color
+
+.all-articles__common
+    width: 100%
+    margin-top: 3rem
+    display: grid
+    grid-auto-flow: column
+    justify-content: space-between
+
+.all-articles__common-item
+    width: 36rem
+    height: 50rem
+    border-radius: 1.6rem
+    position: relative
+
+    &>img  
+        border-radius: 1.6rem
+
+
+.all-articles__common-item-content
+    width: 36rem
+    height: 50rem
+    padding: 3.2rem 3.2rem 4rem 3.2rem 
+    position: absolute
+    top: 0
+    z-index: 2
+    display: grid
+    align-content: end
+
+    border-radius: 1.6rem
+    background: linear-gradient(180deg, rgba(24, 59, 86, 0.00) 0%, rgba(22, 49, 70, 0.45) 45.38%, #152532 100%)
+
+    &>.item-footer
+        margin-top: 3.2rem
+
+.all-articles__common-description
+    margin-top: 1.2rem
+    font-size: 2rem
+    font-weight: 400
+    line-height: 3.6rem
+
+.all-articles__more
+    margin: 4.8rem auto 0 auto
+    padding: 1.3rem 2.4rem
+    display: grid
+    grid-auto-flow: column
+    align-content: center
+    column-gap: 1.6rem
+
+    color: $button-color
+    font-size: 1.6rem
+    font-weight: 700
+    border: 2px solid $button-color
+    border-radius: 0.8rem
+    background-color: transparent
+
+    &>div
+        display: inline-block
+        width: 1.3rem
+        height: 1.6rem
+        position: relative
+        top: 0.1rem
+
+    &>div:nth-child(3)
+        display: none
+
+
+@media(min-width: 780px)
+    .all-articles__more:hover
+        color: $primary-color
+        background-color: $button-color
+
+        &>div:nth-child(2)
+            display: none
+
+        &>div:nth-child(3)
+            display: inline-block
+
+    .all-articles__featured-item:hover
+        box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.18)
+        transform: scale(1.01)
+
+    .all-articles__common-item:hover
+        box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.18)
+        transform: scale(1.01)
+
