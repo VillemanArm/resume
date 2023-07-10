@@ -14,7 +14,7 @@
     font-size: 1.6rem
     font-weight: 600
 
-    color: #959EAD
+    color: $search-color
     background-image: url(../img/search/search.svg)
     background-repeat: no-repeat
     background-size: 1.8rem 1.6rem
@@ -38,21 +38,23 @@
 .search__tags
     position: relative  
     top: -1rem
-    display: grid
-    grid-auto-flow: column
-    column-gap: 1.6rem
-    justify-content: start
-    align-items: center
 
     span
+        margin-right: 1.6rem
+
         font-size: 1.6rem
         line-height: 2.2rem
         font-weight: 500
 
         color: $primary-color
 
+    .buttons
+        display: inline-block
+
     button
         padding: 0.6rem 1.7rem
+        margin-right: 1.6rem
+
         font-size: 1.4rem
         line-height: 2rem
         font-weight: 700
@@ -64,14 +66,75 @@
 
         border-radius: 0.4rem
 
-        &:hover
+@media(min-width: 780px)
+    .search__button:hover
+        color: $button-color
+        background-color: transparent
+
+    .buttons>button:hover
             color: #959EAD
             background: #fff
             backdrop-filter: none
+    
+        
+@media (max-width: 780px) 
+    .search
+        padding-top: 3rem
+        width: 30rem
 
-@media(min-width: 780px)
-    .search__button:hover
+    .search__input
+        width: 30rem
+        height: 3.2rem
+
+        margin: 2.4rem auto 0 auto
+        padding-left: 2.8rem
+        padding-right: 1rem
         
-        color: $button-color
-        background-color: transparent
+        font-size: 1.4rem
+
+        background-size: 1.6rem 1.4rem
+        background-position: 0.6rem 0.8rem
+        border: 0.1rem solid $search-color 
+        border-radius: 0.8rem
+
+    .search__button   
+        display: block
+        position: static    
+        padding: 0.6rem 1.2rem
+        margin: 0.6rem 0 0 auto
+
+
+        font-size: 1.2rem
+
+        border-radius: 0.6rem
+        border: 0.2rem solid $button-color
+
+    .search__tags
+        position: static  
+        margin-top: 0.6rem
+
+        span
+            font-size: 1.4rem
+            line-height: 1.4rem
+
+            color: $secondary-color
         
+        button
+            padding: 0.4rem 1.2rem
+            margin: 0.6rem 1rem 0 0
+
+            font-size: 1.2rem
+            line-height: 1.8rem
+
+
+            color: $primary-color
+            background: rgba(0, 0, 0, 0.2)
+            border: 1px solid #FFFFFF
+            backdrop-filter: blur(10px)
+
+            border-radius: 0.4rem
+
+            &:hover
+                color: #959EAD
+                background: #fff
+                backdrop-filter: none

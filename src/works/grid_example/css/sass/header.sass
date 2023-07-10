@@ -34,6 +34,31 @@
     border: 0.2rem solid $primary-color
     border-radius: 0.8rem
 
-    &:hover
+@media (min-width: 780px) 
+    .header__button:hover
         color: #959EAD
         background: #fff
+
+@media (max-width: 780px) 
+    .header
+        padding-top: 2rem
+
+    .header__logo
+        width: 10rem
+
+    .header__navigation
+        display: grid
+        grid-auto-flow: column
+        align-items: center
+
+    .header__links
+        display: none
+
+    .header__button
+        padding: 0.4rem 1.2rem
+        
+        font-size: 1.2rem
+        line-height: 2rem
+
+        border: 0.1rem solid $primary-color
+        border-radius: 0.6rem
