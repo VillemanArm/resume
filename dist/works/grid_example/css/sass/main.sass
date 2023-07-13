@@ -2,6 +2,7 @@ $primary-color: #ffffff
 $secondary-color: #183B56
 $button-color: #1565D8
 $footer-color: #5A7184
+$search-color: #959EAD
 
 *
     box-sizing: border-box
@@ -73,8 +74,6 @@ h4
     font-size: 1.8rem
     font-weight: 700
 
-
-
 input, button 
     border: none
     outline: none
@@ -86,9 +85,13 @@ input, button
 
         color: #5A7184
 
+@media (min-width: 780px) 
+    a:hover
+        text-decoration: underline
+
 @media (max-width: 1440px) 
     html 
-        font-size: 0,6944444444444444vw
+        font-size: 0.6944444444444444vw
   
 @media (max-width: 780px) 
     html 
@@ -101,3 +104,25 @@ input, button
 
     .background-top
         width: 100%
+
+    h1
+        font-size: 2.8rem
+        line-height: 3rem
+
+    h2
+        font-size: 2.4rem
+        line-height: 2.4rem
+
+
+    h3
+
+        font-size: 2.3rem
+        line-height: 3.6rem
+
+    h4
+        font-size: 1.8rem
+
+
+    .text-content
+        font-size: 1.4rem
+        line-height: 2.4rem

@@ -26,8 +26,8 @@
     position: absolute
     top: 0
     z-index: 2        
-    width: 55.5rem
-    height: 60rem
+    width: 100%
+    height: 100%
     padding: 3.2rem 4.8rem 4.2rem 4.8rem
     display: grid
     align-content: space-between
@@ -63,8 +63,8 @@
 
 
 .all-articles__common-item-content
-    width: 36rem
-    height: 50rem
+    width: 100%
+    height: 100%
     padding: 3.2rem 3.2rem 4rem 3.2rem 
     position: absolute
     top: 0
@@ -128,4 +128,69 @@
     .all-articles__common-item:hover
         box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.18)
         transform: scale(1.01)
+
+@media (max-width: 780px)
+    .all-articles
+        margin-top: 5rem
+
+    .all-articles__description
+        width: 100%
+        margin-top: 1.6rem
+
+    .all-articles_featured
+        margin-top: 3rem
+        display: grid
+        grid-auto-flow: row
+        gap: 1.6rem
+
+    .all-articles__featured-item
+        width: 100%
+        height: auto
+        position: relative
+
+        border-radius: 1.6rem
+
+        &>img
+            border-radius: 1.6rem
+
+    .all-articles__featured-item-content   
+        padding: 2rem
+
+        &>.featured-label
+            margin-left: -0.6rem
+
+        &>div>.item-footer
+            margin-top: 3rem
+
+    .all-articles__common
+        width: 100%
+        margin-top: 1.6rem
+        grid-auto-flow: row
+        gap: 1.6rem
+
+    .all-articles__common-item
+        width: 100%
+        height: auto
+        border-radius: 1.6rem
+        position: relative
+
+        &>img  
+            border-radius: 1.6rem
+
+
+    .all-articles__common-item-content
+        padding: 2rem
+
+        border-radius: 1.6rem
+
+        &>.item-footer
+            margin-top: 3rem
+
+    .all-articles__common-description
+        font-size: 1.8rem
+        line-height: 2.6rem
+
+    .all-articles__more
+        margin: 3rem auto 0 auto
+
 

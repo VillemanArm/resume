@@ -26,12 +26,17 @@
 
 .item-footer__user-verification
     margin-top: 0.4rem
+    display: grid
+    grid-auto-flow: column
+    align-items: center
+    justify-content: start
 
-    line-height: 1.9rem
+    font-size: 1.2rem
+    font-style: italic
 
     &>img
-        width: 1.2rem
-        height: 1.2rem
+        width: 1.8rem
+        height: 1.8rem
         margin-right: 0.8rem
 
 .item-footer__date
@@ -39,3 +44,27 @@
     font-weight: 600
     
     color: #5A7184
+
+@media (max-width: 780px)
+    .item-footer
+        height: 4.2rem
+
+    .item-footer__avatar
+        width: 3.6rem
+        height: 3.6rem
+
+    .item-footer__user-name
+        font-size: 1.4rem
+        line-height: 2rem
+
+    .item-footer__user-verification
+
+        font-size: 1.1rem
+
+
+        &>img
+            width: 1.6rem
+            height: 1.6rem
+
+    .item-footer__date
+        font-size: 1.4rem

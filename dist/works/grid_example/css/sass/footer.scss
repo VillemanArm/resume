@@ -92,9 +92,89 @@ footer{
 
 .footer__copyright{
     grid-area: copyrigt;
-    margin-top: 17.4rem;
+    margin-top: 14.8rem;
 
     text-align: center;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 600;
 }
+
+@media (max-width: 780px) {
+    footer{
+        margin: 4rem auto 0 auto;
+        width: 100%;
+        
+        &>div{
+            background-color: #0D2436;
+        }
+    }
+        
+    .footer{
+        margin-top: -0.5rem;
+        display: grid;
+        grid-template-areas:
+            "logo        logo"
+            "description description"
+            "networks    networks"
+            "links1      links2" 
+            "links3      links4"
+            "copyrigt    copyrigt ";
+        padding: 2rem 0 7.2rem 0;
+
+    }
+       
+    .footer__logo{
+        width: 10rem;
+        height: auto;   
+    }
+        
+    .footer__description{
+        margin-top: 2rem;
+        max-width: 100%;
+    
+        font-size: 1.4rem;
+        line-height: 2.6rem;
+    }
+    
+    .footer__social-networks{
+        max-width: 100%;
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 1.7rem 2.2rem;
+    
+        &>a{
+            font-size: 1.4rem;
+        }
+    }
+    
+    .footer__links{
+        margin-top: 3rem;
+        margin-bottom: 0;
+    }
+
+    .footer__links-header{
+        cursor: pointer;
+    }
+
+    .footer__links>ul>li{
+        font-size: 1.4rem;
+    }
+    
+    .footer__links>ul{
+        display: none;
+        margin-top: 2.4rem; 
+    }
+    
+    .footer__links>ul>li:not(:first-child){
+        margin-top: 2rem; 
+    }
+    
+    .footer__copyright{
+        margin-top: 10rem;
+    
+        font-size: 1.4rem;
+    }
+}
+
+    
