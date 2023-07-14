@@ -82,6 +82,8 @@ html {
 body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
+  line-height: normal;
+  color: #ffffff;
 }
 
 section {
@@ -127,7 +129,7 @@ input, button {
   }
 }
 .header {
-  padding-top: 2.9rem;
+  padding-top: 2.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -157,6 +159,7 @@ input, button {
 
 .header__nav {
   margin-right: 5rem;
+  margin-top: -0.2rem;
 }
 
 .header__link {
@@ -209,6 +212,109 @@ input, button {
   .header__nav {
     display: none;
   }
+}
+.hero {
+  position: relative;
+  display: flex;
+}
+
+.hero__background {
+  position: absolute;
+  top: 5.5rem;
+  left: 16rem;
+  font-size: 20rem;
+  line-height: 23.7rem;
+  font-weight: 700;
+  color: rgba(254, 244, 244, 0.05);
+}
+
+.hero__content {
+  position: relative;
+  padding: 15.4rem 7rem 12.8rem 7rem;
+  z-index: 1;
+  display: flex;
+}
+
+.hero__description {
+  width: 59rem;
+  display: flex;
+  flex-direction: column;
+}
+.hero__description > h1 {
+  margin: 0;
+  font-size: 7rem;
+  font-weight: 800;
+  line-height: 10rem;
+  color: #F65151;
+}
+.hero__description > h1 > span {
+  color: #ffffff;
+}
+.hero__description > span {
+  margin-top: 3.5rem;
+  max-width: 48.4rem;
+  font-size: 3.4rem;
+  font-weight: 600;
+}
+
+.hero__description-button {
+  width: 30.7rem;
+  display: flex;
+  margin-top: 4rem;
+  padding: 1.7rem 3.7rem;
+  align-items: center;
+  background-color: #F65151;
+  border-radius: 2.5rem;
+  border: 0.3rem solid #F65151;
+}
+.hero__description-button > span {
+  margin-right: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.hero__description-button > img {
+  width: 6rem;
+  height: 6rem;
+}
+.hero__description-button > img:nth-of-type(1) {
+  display: none;
+}
+
+@media (min-width: 780px) {
+  .hero__description-button:hover {
+    background-color: transparent;
+    color: #F65151;
+  }
+  .hero__description-button:hover > img:nth-of-type(1) {
+    display: block;
+  }
+  .hero__description-button:hover > img:nth-of-type(2) {
+    display: none;
+  }
+}
+.hero__image {
+  width: 68.6rem;
+  display: flex;
+}
+
+.hero__image-shoe {
+  margin-top: -4.5rem;
+  width: 58.5rem;
+}
+
+.hero__image-colors {
+  position: relative;
+  top: -7rem;
+  left: 2.5rem;
+  width: 8rem;
+}
+
+.hero__social-networks {
+  width: 2.4rem;
+  position: relative;
+  top: 17.1rem;
+  left: -0.6rem;
 }
 
 /*# sourceMappingURL=style.css.map */

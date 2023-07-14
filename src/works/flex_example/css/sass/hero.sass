@@ -1,0 +1,105 @@
+.hero
+    position: relative
+    display: flex
+    
+
+.hero__background
+    position: absolute
+    top: 5.5rem
+    left: 16rem
+
+
+    font-size: 20rem
+    line-height: 23.7rem
+    font-weight: 700
+    
+
+    color: rgba(254, 244, 244, 0.05)
+
+.hero__content
+    position: relative
+    padding: 15.4rem 7rem 12.8rem 7rem
+    z-index: 1
+    display: flex
+    
+
+.hero__description 
+    width: 59rem
+    display: flex
+    flex-direction: column
+
+    &>h1
+        margin: 0
+        font-size: 7rem
+        font-weight: 800
+        line-height: 10rem
+
+        color: $highlight-color
+
+        &>span
+            color: $primary-color
+
+    &>span
+        margin-top: 3.5rem
+        max-width: 48.4rem
+
+        font-size: 3.4rem
+        font-weight: 600
+        
+
+.hero__description-button
+    width: 30.7rem
+    display: flex
+    margin-top: 4rem
+    padding: 1.7rem 3.7rem
+    align-items: center
+
+    background-color: $highlight-color
+    border-radius: 2.5rem
+    border: 0.3rem solid $highlight-color
+
+    &>span
+        margin-right: 2rem
+
+        font-size: 3rem
+        font-weight: 700
+        text-transform: uppercase
+
+    &>img
+        width: 6rem
+        height: 6rem
+
+    &>img:nth-of-type(1)
+        display: none
+        
+@media (min-width: 780px)
+    .hero__description-button:hover
+        background-color: transparent
+        color: $highlight-color
+
+        &>img:nth-of-type(1)
+            display: block
+
+        &>img:nth-of-type(2)
+            display: none
+
+.hero__image
+    width: 68.6rem
+    display: flex
+
+.hero__image-shoe
+    margin-top: -4.5rem
+
+    width: 58.5rem
+
+.hero__image-colors
+    position: relative
+    top: -7rem
+    left: 2.5rem
+    width: 8rem
+
+.hero__social-networks
+    width: 2.4rem
+    position: relative
+    top: 17.1rem
+    left: -0.6rem
