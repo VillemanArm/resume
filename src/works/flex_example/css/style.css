@@ -480,4 +480,31 @@ h3 {
   display: flex;
 }
 
+@media (max-width: 780px) {
+  .category {
+    padding-top: 5rem;
+    height: 190rem;
+  }
+  .category__header {
+    width: 32rem;
+    margin-left: -1rem;
+    height: 18.4rem;
+  }
+  .category__cards {
+    margin-top: -4.8rem;
+    flex-direction: column;
+    padding: 0;
+    justify-content: space-between;
+  }
+  .category__card {
+    width: 30rem;
+  }
+  .category__card:not(:first-child) {
+    margin-top: 4rem;
+  }
+  .category__card:hover {
+    margin-top: 4rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
