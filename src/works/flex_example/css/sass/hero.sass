@@ -47,16 +47,12 @@
         font-weight: 600
         
 
-.hero__description-button
+.hero__button
     width: 30.7rem
-    display: flex
     margin-top: 4rem
     padding: 1.7rem 3.7rem
-    align-items: center
 
-    background-color: $highlight-color
     border-radius: 2.5rem
-    border: 0.3rem solid $highlight-color
 
     &>span
         margin-right: 2rem
@@ -67,21 +63,7 @@
 
     &>img
         width: 6rem
-        height: 6rem
-
-    &>img:nth-of-type(1)
-        display: none
-        
-@media (min-width: 780px)
-    .hero__description-button:hover
-        background-color: transparent
-        color: $highlight-color
-
-        &>img:nth-of-type(1)
-            display: block
-
-        &>img:nth-of-type(2)
-            display: none
+        height: 6rem       
 
 .hero__image
     width: 68.6rem
@@ -136,14 +118,10 @@
 
             font-size: 2.6rem
             font-weight: 600
-            
 
-    .hero__description-button
+    .link-button
         width: 30rem
-        justify-content: center
-
         padding: 1rem 0
-        align-items: center
 
         border-radius: 2rem
         border: 0.2rem solid $highlight-color
@@ -155,7 +133,7 @@
 
         &>img
             width: 5rem
-            height: 5rem
+            height: 5rem            
 
     .hero__image
         width: 100%
