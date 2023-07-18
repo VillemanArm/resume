@@ -1,0 +1,96 @@
+.footer
+    padding: 4.8rem 9.6rem 10rem 9.6rem
+
+    font-family: Poppins
+    font-size: 1.8rem
+    font-weight: 500
+
+    color: $footer-color
+    background-color: #503A3A
+
+.footer__wrapper
+    display: flex
+    justify-content: space-between
+    
+.footer__logo
+    width: 15.4rem
+    height: 6.4rem
+
+.footer__description
+    margin-top: 2.4rem
+    width: 19rem
+
+.footer__social
+    margin-top: 2.4rem
+    
+    &>img
+        width: 4.8rem
+        height: 4.8rem
+        margin-right: 2.4rem
+
+.footer__right
+    min-width: 45.2rem
+    display: flex
+
+.footer__links
+    color: $category-color
+
+    &:not(:last-child)
+        margin-right: 4.8rem
+
+    &>ul>li
+        margin-top: 2.4rem
+        margin-left: -4rem
+        list-style: none
+
+        &>a
+            color: $footer-color
+            font-family: Poppins
+            font-size: 1.8rem
+            font-weight: 400
+            line-height: normal
+
+            &:hover
+                text-decoration: underline
+
+.footer__copyright
+    margin-top: 1.4rem
+
+@media (max-width: 780px)
+    .footer
+        padding: 4.8rem 1rem 10rem 1rem
+
+        font-size: 1.6rem
+
+    .footer__wrapper
+        flex-direction: column
+        
+    .footer__logo
+        width: 15.4rem
+        height: 6.4rem
+
+    .footer__description
+        margin-top: 2.4rem
+        width: 19rem
+        
+    .footer__social>img
+            width: 4.6rem
+            height: 4.6rem
+            margin-right: 2.2rem
+
+    .footer__links
+        margin-top: 2rem
+
+        &:not(:last-child)
+            margin-right: 4.4rem
+
+        &>ul>li
+            margin-top: 2rem
+            margin-left: -4rem
+            list-style: none
+
+            &>a
+                font-size: 1.6rem
+   
+    .footer__copyright
+        margin-top: 4rem
