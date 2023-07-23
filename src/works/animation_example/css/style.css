@@ -4,14 +4,18 @@
   font-style: normal;
   font-weight: 400;
 }
+html {
+  font-size: 10px;
+}
+
 .examples {
   display: flex;
   justify-content: center;
 }
 
 .example {
-  width: 300px;
-  height: 200px;
+  width: 32rem;
+  height: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,24 +30,82 @@
   background-color: #bab9b8;
 }
 
+@media (max-width: 960px) {
+  html {
+    font-size: 1.0416666667vw;
+  }
+}
+@media (max-width: 780px) {
+  html {
+    font-size: 3.125vw;
+  }
+  .examples {
+    flex-direction: column;
+  }
+}
+.loading {
+  display: flex;
+}
+
+.point {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #888c8c;
+  animation-name: increasing;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.point:not(:first-child) {
+  margin-left: 1.2rem;
+}
+.point:nth-child(2) {
+  animation-delay: 666ms;
+}
+.point:nth-child(3) {
+  animation-delay: 1333ms;
+}
+
+@keyframes increasing {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+    background-color: #3a3b3b;
+  }
+  50% {
+    transform: scale(1);
+    background-color: #888c8c;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .play {
-  width: 120px;
-  height: 120px;
+  width: 12rem;
+  height: 12rem;
   position: relative;
+  cursor: pointer;
 }
 
 .circle-text {
-  width: 100%;
-  height: 100%;
+  width: 12rem;
+  height: 12rem;
   position: absolute;
   top: 0;
   font-family: "Inter";
   font-size: 12.15px;
+  animation-name: rotation;
+  animation-duration: 14s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .circle {
-  width: 60px;
-  height: 60px;
+  width: 6rem;
+  height: 6rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,47 +122,17 @@
 .play:hover .circle {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
-.play:hover .circle-text {
-  animation-name: rotation;
-  animation-duration: 14s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
 
 .triangle {
   width: 0;
   height: 0;
-  border-left: 16px solid;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
+  border-left: 1.6rem solid;
+  border-top: 0.8rem solid transparent;
+  border-bottom: 0.8rem solid transparent;
   position: absolute;
   top: 50%;
   left: 55%;
   transform: translate(-50%, -50%);
-}
-
-.loading {
-  display: flex;
-}
-
-.point {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #888c8c;
-  animation-name: increasing;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-.point:not(:first-child) {
-  margin-left: 12px;
-}
-.point:nth-child(2) {
-  animation-delay: 666ms;
-}
-.point:nth-child(3) {
-  animation-delay: 1333ms;
 }
 
 @keyframes rotation {
@@ -111,40 +143,26 @@
     transform: rotate(360deg);
   }
 }
-@keyframes increasing {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.3);
-    background-color: #3a3b3b;
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .burger {
-  width: 40px;
-  height: 30px;
+  width: 4rem;
+  height: 3rem;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 .burger:hover .burger__line {
   background-color: #0317fc;
 }
 
 .burger__line {
-  width: 34px;
-  height: 6px;
+  width: 3.4rem;
+  height: 0.6rem;
   transform-origin: center left;
-  border-radius: 3px;
+  border-radius: 0.3rem;
   background-color: #000000;
 }
 .burger__line:not(:first-child) {
-  margin-top: 6px;
+  margin-top: 0.6rem;
 }
 
 .burger__line-animation1 {
@@ -178,7 +196,7 @@
 }
 
 .burger__line-animation-reverse1 {
-  transform: translate(8px, 0px) rotate(45deg);
+  transform: translate(0.8rem, 0rem) rotate(45deg);
   animation-name: cross-reverse1;
   animation-duration: 0.4s;
   animation-timing-function: linear;
@@ -188,7 +206,7 @@
 
 .burger__line-animation-reverse2 {
   background-color: transparent;
-  transform: translateX(50px);
+  transform: translateX(5rem);
   animation-name: cross-reverse2;
   animation-duration: 0.75s;
   animation-timing-function: linear;
@@ -197,7 +215,7 @@
 }
 
 .burger__line-animation-reverse3 {
-  transform: translate(8px, 0px) rotate(-45deg);
+  transform: translate(0.8rem, 0rem) rotate(-45deg);
   animation-name: cross-reverse3;
   animation-duration: 0.4s;
   animation-timing-function: linear;
@@ -210,12 +228,12 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: translate(8px, 0px) rotate(45deg);
+    transform: translate(0.8rem, 0rem) rotate(45deg);
   }
 }
 @keyframes cross-reverse1 {
   0% {
-    transform: translate(8px, 0px) rotate(45deg);
+    transform: translate(0.8rem, 0rem) rotate(45deg);
   }
   100% {
     transform: rotate(0deg);
@@ -226,21 +244,21 @@
     transform: translateX(0);
   }
   90% {
-    transform: translateX(50px);
+    transform: translateX(5rem);
     background-color: #0317fc;
   }
   100% {
-    transform: translateX(50px);
+    transform: translateX(5rem);
     background-color: transparent;
   }
 }
 @keyframes cross-reverse2 {
   0% {
-    transform: translateX(50px);
+    transform: translateX(5rem);
     background-color: transparent;
   }
   20% {
-    transform: translateX(50px);
+    transform: translateX(5rem);
     background-color: #0317fc;
   }
   100% {
@@ -253,12 +271,12 @@
     transform: rotate(0deg);
   }
   100% {
-    transform: translate(8px, 0px) rotate(-45deg);
+    transform: translate(0.8rem, 0rem) rotate(-45deg);
   }
 }
 @keyframes cross-reverse3 {
   0% {
-    transform: translate(8px, 0px) rotate(-45deg);
+    transform: translate(0.8rem, 0rem) rotate(-45deg);
   }
   100% {
     transform: rotate(0deg);

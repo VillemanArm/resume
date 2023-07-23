@@ -1,14 +1,15 @@
-$cross-shift-x: 8px;
-$cross-shift-y: 0px;
+$cross-shift-x: 0.8rem;
+$cross-shift-y: 0rem;
 $cross-color: #0317fc;
 $cross-animation-time: 0.4s;
 $cross-animation-delay: 0.12s;
 
 .burger{
-    width: 40px;
-    height: 30px;
+    width: 4rem;
+    height: 3rem;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     
     &:hover .burger__line{
         background-color: $cross-color;
@@ -16,15 +17,15 @@ $cross-animation-delay: 0.12s;
 }
 
 .burger__line{
-    width: 34px;
-    height: 6px;
+    width: 3.4rem;
+    height: 0.6rem;
     transform-origin: center left;
 
-    border-radius: 3px;
+    border-radius: 0.3rem;
     background-color: #000000;
 
     &:not(:first-child){
-        margin-top: 6px;
+        margin-top: 0.6rem;
     }
 }
 
@@ -70,7 +71,7 @@ $cross-animation-delay: 0.12s;
 
 .burger__line-animation-reverse2{
     background-color: transparent;
-    transform: translateX(50px);
+    transform: translateX(5rem);
 
     animation-name: cross-reverse2;
     animation-duration: 0.75s;
@@ -114,24 +115,24 @@ $cross-animation-delay: 0.12s;
         transform: translateX(0); 
     }    
     90% {
-        transform: translateX(50px);
+        transform: translateX(5rem);
         background-color: $cross-color;
 
     }
     100% {
-        transform: translateX(50px);
+        transform: translateX(5rem);
         background-color: transparent;
     }
 }
 
 @keyframes cross-reverse2 {
     0% {
-        transform: translateX(50px);
+        transform: translateX(5rem);
         background-color: transparent;
         
     }    
     20% {
-        transform: translateX(50px);
+        transform: translateX(5rem);
         background-color: $cross-color;
 
     }
