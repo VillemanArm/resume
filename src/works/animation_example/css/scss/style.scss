@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/inter/Inter-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+
+.examples{
+    display: flex;
+    justify-content: center;
+}
+
+.example{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-child(1){
+        background-color: #56b0ad;
+    }
+
+    &:nth-child(2){
+        background-color: #f0863c;
+    }
+
+    &:nth-child(3){
+        background-color: #bab9b8;
+    }
+}
+
+.play{
+    width: 120px;
+    height: 120px;
+    position: relative;
+
+}
+
+.circle-text{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    font-family: 'Inter';
+    font-size: 12.15px;
+}
+
+.circle{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.play:hover{
+    transform: scale(1.1);   
+
+    .circle{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .circle-text{
+        animation-name: rotation;
+        animation-duration: 14s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-left: 16px solid ;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);   
+}
+
+.loading{
+    display: flex;
+
+}
+
+.point{
+    width: 10px;
+    height: 10px;
+    
+    border-radius: 50%;
+    background-color: #888c8c;
+
+    animation-name: increasing;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &:not(:first-child){
+        margin-left: 12px;
+    }
+
+    &:nth-child(2){
+        animation-delay: 666ms;
+    }
+
+    &:nth-child(3){
+        animation-delay: 1333ms;
+    }
+}
+
+
+
+
+
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }    
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes increasing {
+    0% {
+        transform: scale(1); 
+    }    
+    25% {
+        transform: scale(1.3); 
+        background-color: #3a3b3b;
+    }    
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+@import 'cross';
