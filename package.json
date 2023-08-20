@@ -19,6 +19,7 @@
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "browser-sync": "^2.29.1",
+    "css-loader": "^6.8.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
@@ -41,7 +42,9 @@
     "gulp-webp": "^4.0.1",
     "gulp-webp-css-fixed": "^1.1.0",
     "gulp-webp-html": "^1.0.2",
-    "sass": "^1.62.0"
+    "sass": "^1.62.0",
+    "style-loader": "^3.3.3",
+    "webpack-stream": "^7.0.0"
   },
   "babel": {
     "presets": [

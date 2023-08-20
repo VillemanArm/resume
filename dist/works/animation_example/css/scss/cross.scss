@@ -1,0 +1,161 @@
+$cross-shift-x: 0.8rem;
+$cross-shift-y: 0rem;
+$cross-color: #0317fc;
+$cross-animation-time: 0.4s;
+$cross-animation-delay: 0.12s;
+
+.burger{
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    
+    &:hover .burger__line{
+        background-color: $cross-color;
+    }
+}
+
+.burger__line{
+    width: 3.4rem;
+    height: 0.6rem;
+    transform-origin: center left;
+
+    border-radius: 0.3rem;
+    background-color: #000000;
+
+    &:not(:first-child){
+        margin-top: 0.6rem;
+    }
+}
+
+.burger__line-animation1{
+    background-color: $cross-color;
+    transform-origin: center left;
+
+    animation-name: cross1;
+    animation-duration: $cross-animation-time;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: $cross-animation-delay;
+}
+
+.burger__line-animation2{
+    background-color: $cross-color;
+    animation-name: cross2;
+    animation-duration: $cross-animation-time;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.burger__line-animation3{
+    background-color: $cross-color;
+    animation-name: cross3;
+    animation-duration: $cross-animation-time;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: $cross-animation-delay;
+}
+
+.burger__line-animation-reverse1{
+    transform: translate($cross-shift-x, $cross-shift-y) rotate(45deg);
+    animation-name: cross-reverse1;
+    animation-duration: $cross-animation-time;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.burger__line-animation-reverse2{
+    background-color: transparent;
+    transform: translateX(5rem);
+
+    animation-name: cross-reverse2;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+
+}
+
+.burger__line-animation-reverse3{
+    transform: translate($cross-shift-x, $cross-shift-y) rotate(-45deg); 
+    animation-name: cross-reverse3;
+    animation-duration: $cross-animation-time;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cross1 {
+    0% {
+        transform: rotate(0deg); 
+    }    
+    100% {
+        transform: translate($cross-shift-x, $cross-shift-y) rotate(45deg);
+    }
+}
+
+@keyframes cross-reverse1 {
+    0% {
+        transform: translate($cross-shift-x, $cross-shift-y) rotate(45deg);
+        
+    }    
+    100% {
+        transform: rotate(0deg); 
+    }
+}
+
+@keyframes cross2 {
+    0% {
+        transform: translateX(0); 
+    }    
+    90% {
+        transform: translateX(5rem);
+        background-color: $cross-color;
+
+    }
+    100% {
+        transform: translateX(5rem);
+        background-color: transparent;
+    }
+}
+
+@keyframes cross-reverse2 {
+    0% {
+        transform: translateX(5rem);
+        background-color: transparent;
+        
+    }    
+    20% {
+        transform: translateX(5rem);
+        background-color: $cross-color;
+
+    }
+    100% {
+        transform: translateX(0); 
+        background-color: $cross-color;
+    }
+}
+
+@keyframes cross3 {
+    0% {
+        transform: rotate(0deg); 
+    }    
+    100% {
+        transform: translate($cross-shift-x, $cross-shift-y) rotate(-45deg) ;
+    }
+}
+
+@keyframes cross-reverse3 {
+    0% {
+        transform: translate($cross-shift-x, $cross-shift-y) rotate(-45deg); 
+    }    
+    100% {
+        transform: rotate(0deg) ;
+    }
+}
