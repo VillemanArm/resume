@@ -2,11 +2,11 @@ const config  = {
     mode: 'production',
 
     entry: {
+        // сюда надо занести каждый файл, который надо перенести в сборку
         index: './src/js/index.js',
     },
 
-    output: {        
-        // path: path.join(__dirname, 'dist', 'js'), // сборка пути из имен директорий и файлов
+    output: {                
         filename: '[name].js',
     },
 

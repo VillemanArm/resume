@@ -19,6 +19,7 @@
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "browser-sync": "^2.29.1",
+    "chalk": "^5.3.0",
     "css-loader": "^6.8.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -27,6 +28,7 @@
     "gulp-clean-fix": "^0.3.4",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
+    "gulp-file-include": "^2.3.0",
     "gulp-fonter-2": "^0.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^5.0.1",
@@ -44,6 +46,7 @@
     "gulp-webp-html": "^1.0.2",
     "sass": "^1.62.0",
     "style-loader": "^3.3.3",
+    "vinyl-ftp": "^0.6.1",
     "webpack-stream": "^7.0.0"
   },
   "babel": {

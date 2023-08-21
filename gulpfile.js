@@ -22,17 +22,26 @@ const webp = require('gulp-webp');
 const webpHtml = require("gulp-webp-html");
 const webpCss = require("gulp-webp-css-fixed");
 const fonter = require("gulp-fonter-2");
-const webpack = require("webpack-stream")
+const webpack = require("webpack-stream");
+const fileInclude = require("gulp-file-include");
+const ftp = require('vinyl-ftp');
+const ftpSettings = require('./ftp_settings.json');
+const connect = ftp.create(ftpSettings);
+// const chalk = require('chalk');
 
 //Задачи
 
 const htmlTask = () => { // задача (обычная js функция)
-    return src("./src/index.html") // чтение данных для обработки
+    return src("./src/*.html") // чтение данных для обработки
     .pipe(plumber({ // замена стандартного обработчика ошибок
         errorHandler: notify.onError(error => ({
             title: 'HTML',
             message: error.message
         }))
+    }))
+    .pipe(fileInclude({ // импорт html шаблонов в файлы html подключение: @@include('путь к шаблону относительно файла')
+        prefix: '@@',
+        basepath: '@file'
     }))
     .pipe(webpHtml())
     .pipe(htmlmin({          // любое количество плагинов
@@ -94,7 +103,6 @@ const sassTask = () => {
 
 const jsTask = () => { 
     return src("./src/js/*.js", {sourcemaps: isDev}) 
-        // .pipe(plumber(plumberNotify('JS')))
         .pipe(plumber({ 
             errorHandler: notify.onError(error => ({
                 title: 'JavaScript',
@@ -103,11 +111,7 @@ const jsTask = () => {
         }))
         .pipe(webpack(require('./webpack.config.js')))       
         .pipe(dest("./dist/js/", {sourcemaps: isDev})) 
-       
-        // .pipe(concat('script.js'))
-        // .pipe(uglify()) // минификатор js
-        // .pipe(dest("./dist/js/", {sourcemaps: isDev})) 
-        // .pipe(browserSync.stream()); 
+
     }
     // .pipe(concat("script.js"))
     // .pipe(babel()) // перевод на ES5 для старых браузеров
@@ -165,6 +169,14 @@ const server = (cb) => {
     cb()
 }
 
+//заливка на сервер
+const deploy = () => {
+    return src('dist/**/*.*', {buffer: false})
+    .pipe(connect.newer('/domains/insight-webstudio.ru/')) // указать папку домена в корне хостинга
+    .pipe(connect.dest('/domains/insight-webstudio.ru/'))
+}
+
+
 exports.htmlTask = htmlTask; //экспорт задачи
 module.exports.watch = watcher; //экспорт задачи в другие модули
 exports.clear = clear;
@@ -174,6 +186,7 @@ exports.imgTask = imgTask
 exports.fontsTask = fontsTask
 exports.worksTransferingTask = worksTransferingTask
 exports.filesTransferingTask = filesTransferingTask
+exports.deploy = deploy
 
 
 // флаг --production запускает режим финальной сборки проекта
