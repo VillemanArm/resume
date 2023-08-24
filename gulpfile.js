@@ -78,6 +78,13 @@ const filesTransferingTask = () => {
     .pipe(browserSync.stream()); 
 }
 
+const librariesTransferingTask = () => { 
+    return src("./src/js/libraries/*.*")
+    .pipe(newer("./dist/js/libraries/"))
+    .pipe(dest("./dist/js/libraries/")) 
+    .pipe(browserSync.stream()); 
+}
+
 const sassTask = () => { 
     return src("./src/css/*.sass", {sourcemaps: isDev}) 
         .pipe(plumber({ 
@@ -186,6 +193,7 @@ exports.imgTask = imgTask
 exports.fontsTask = fontsTask
 exports.worksTransferingTask = worksTransferingTask
 exports.filesTransferingTask = filesTransferingTask
+exports.librariesTransferingTask = librariesTransferingTask
 exports.deploy = deploy
 
 
@@ -199,5 +207,6 @@ exports.default = series(   // последовательный список з�
     fontsTask,
     worksTransferingTask,
     filesTransferingTask,
+    librariesTransferingTask,
     parallel(watcher, server) // список задач, выполняемых параллельно
     )

@@ -3,22 +3,21 @@ const openBlock = () => {
     const $$ = document.querySelectorAll.bind(document);
 
 
-    const worksWebpages = $(".works__webpages");
-    const worksList = $(".works__list");
     const skillsBlockWraps = $$(".skills__block-wrap");
-    const skillsBlocks = $(".skills__blocks");
     const worksBlockWrap = $('.works__block-wrap');
+    const contacts = document.querySelector('.contacts')
+    const works = document.querySelector('.works')
 
-    //open blocks
+    //openinig blocks
 
     worksBlockWrap.addEventListener("click", () => {
         worksBlockWrap.classList.toggle('block-clicked')
         if (worksBlockWrap.classList.contains('block-clicked') && window.innerWidth > 768) 
         {
-            $('.contacts').style.marginTop = "4rem";
+            contacts.style.marginTop = "4rem";
         } else
         {
-            $('.contacts').style.marginTop = "16rem";
+            contacts.style.marginTop = "16rem";
         }
     });
 
@@ -28,10 +27,10 @@ const openBlock = () => {
                 wrap.classList.toggle('block-clicked')
                 if (wrap.classList.contains('block-clicked') && window.innerWidth > 768) 
                 {
-                    $('.works').style.marginTop = "4rem";
+                    works.style.marginTop = "4rem";
                 } else
                 {
-                    $('.works').style.marginTop = "16rem";
+                    works.style.marginTop = "16rem";
                 }
             });
     });
