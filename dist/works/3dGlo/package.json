@@ -1,0 +1,19 @@
+{
+  "name": "3Dglo",
+  "version": "1.0.0",
+  "description": "study project",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development",
+    "start": "webpack serve  --open"
+  },
+  "author": "Villeman",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.58.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "keywords": []
+}
