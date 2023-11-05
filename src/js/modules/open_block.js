@@ -5,10 +5,12 @@ const openBlock = () => {
     BlockWraps.forEach((wrap) => {
         wrap.querySelector('div').addEventListener("click", (e) => {
             wrap.classList.toggle('block-clicked')
-            if (blocksIsClicked(e) && window.innerWidth > 768) {
-                e.target.closest('.container').style.paddingBottom = "4rem";
-            } else {
-                e.target.closest('.container').style.paddingBottom = "16rem";
+            if (window.innerWidth > 768) {
+                if (blocksIsClicked(e)) {
+                    e.target.closest('.container').style.paddingBottom = "4rem";
+                } else {
+                    e.target.closest('.container').style.paddingBottom = "16rem";
+                }
             }
         });
     });
