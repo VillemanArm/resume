@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.39f06037.css",
-    "main.js": "/static/js/main.700aad47.js",
+    "main.js": "/static/js/main.b7f182e4.js",
     "static/media/Ubuntu_latin_400.woff2": "/static/media/Ubuntu_latin_400.2f02effe392a63dc07a5.woff2",
     "static/media/Neucha_latin_400.woff2": "/static/media/Neucha_latin_400.252c1be327d81ca97242.woff2",
     "index.html": "/index.html",
     "main.39f06037.css.map": "/static/css/main.39f06037.css.map",
-    "main.700aad47.js.map": "/static/js/main.700aad47.js.map"
+    "main.b7f182e4.js.map": "/static/js/main.b7f182e4.js.map"
   },
   "entrypoints": [
     "static/css/main.39f06037.css",
-    "static/js/main.700aad47.js"
+    "static/js/main.b7f182e4.js"
   ]
 }
